@@ -25,14 +25,14 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0 }) => {
     }
   }, [isInView, hasAnimated]);
 
-  // Use the slideUp function with delay
+  const words = phrase.split(" ");
   const animationVariants = slideUp(delay);
 
   return (
     <div ref={description} className="overflow-hidden">
       <div className="flex flex-col">
         <p className={paragraphClass}>
-          {phrase.split(" ").map((word, index) => (
+          {words.map((word, index) => (
             <span className="inline-block overflow-hidden" key={index}>
               <motion.span
                 className="inline-block"
@@ -41,7 +41,7 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0 }) => {
                 animate={hasAnimated ? "open" : "closed"}
               >
                 {word}
-                {index < phrase.split(" ").length - 1 && "\u00A0"}
+                {index < words.length - 1 && "\u00A0"}
               </motion.span>
             </span>
           ))}

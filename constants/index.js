@@ -55,7 +55,7 @@ export const projects = [
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
     src: [Picture1, Picture1, Picture1, Picture1],
-    video: [iphoneVideo],
+    video: iphoneVideo,
     alt: "hero image 1",
     cta: "View Project",
     projectsPageData: {
@@ -93,7 +93,7 @@ export const projects = [
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
     src: [Picture1, Picture1, Picture1, Picture1],
-    video: [brainWaveVideo],
+    video: brainWaveVideo,
     alt: "hero image 2",
     cta: "View Project",
     projectsPageData: {
@@ -131,7 +131,7 @@ export const projects = [
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
     src: [Picture1, Picture1, Picture1, Picture1],
-    video: [iphoneVideo],
+    video: iphoneVideo,
     alt: "hero image 3",
     cta: "View Project",
     projectsPageData: {

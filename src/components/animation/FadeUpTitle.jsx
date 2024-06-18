@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
+import React, { useMemo } from "react";
 
 // Function to generate animation settings with an optional delay
 const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
-  initial: { y: 300 }, // Start from below the initial position
-  animate: { y: 0 }, // Move to the original position
+  initial: { y: 300 },
+  animate: { y: 0 },
   transition: {
     duration: 1,
     ease: [1, 0.16, 0.38, 0.97],
-    delay: additionalDelay, // This will be the base delay
+    delay: additionalDelay,
   },
 });
 
-const FadeUpTitle = ({ word, delay = 0 }) => {
-  // Generate animation settings with the provided delay
-  const FadeUpTitleAnimation = getFadeUpTitleAnimation(delay / 1000);
+const FadeUpTitle = React.memo(({ word, delay = 0 }) => {
+  const FadeUpTitleAnimation = useMemo(
+    () => getFadeUpTitleAnimation(delay / 1000),
+    [delay]
+  );
 
   return (
     <div style={{ display: "inline-block", overflow: "hidden" }}>
@@ -21,7 +24,7 @@ const FadeUpTitle = ({ word, delay = 0 }) => {
         <motion.span
           key={index}
           className="md:inline-block"
-          style={{ marginRight: char === " " ? "0.125em" : undefined }} // Only add space if character is a space
+          style={{ marginRight: char === " " ? "0.125em" : undefined }}
           variants={FadeUpTitleAnimation}
           initial="initial"
           animate="animate"
@@ -35,6 +38,6 @@ const FadeUpTitle = ({ word, delay = 0 }) => {
       ))}
     </div>
   );
-};
+});
 
 export default FadeUpTitle;

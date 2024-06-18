@@ -53,10 +53,9 @@ const Work = ({ scrollProgress, text2 }) => {
         className="h-full relative bg-iphone flex justify-center items-center p-10"
       >
         <div className="flex">
-          <h1 className="text-projects-color text-14xl flex justify-center items-center tracking-widest font-semibold">
+          <h1 className="text-projects-color text-8xl md:text-14xl flex justify-center items-center tracking-widest font-semibold">
             WORK
           </h1>
-
         </div>
       </motion.div>
     </div>

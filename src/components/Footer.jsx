@@ -6,6 +6,7 @@ import GsapMagnetic from "../components/animation/gsap";
 import FadeUp from "./animation/FadeUp";
 import useScrollToSection from "@/hooks/useScrollToSection";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import Link from "next/link";
 
 export default function Footer({ footer, openEmailClient }) {
   const container = useRef(null);
@@ -33,6 +34,7 @@ export default function Footer({ footer, openEmailClient }) {
         <Image
           src={footer.textImage}
           className="w-full h-full"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Footer Text"
         />
         <div className="border-b border-gray-500 pb-[100px] md:mx-[200px] relative">
@@ -49,12 +51,18 @@ export default function Footer({ footer, openEmailClient }) {
                   </span>
                   {footer.links.map((link, index) => (
                     <GsapMagnetic key={index}>
-                      <a
-                        onClick={() => scrollToSection(link.href.slice(1))}
+                      <Link
+                        href={link.href}
+                        scroll={false}
+                        passHref
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection(link.href.slice(1));
+                        }}
                         className="text-hero-color uppercase cursor-pointer max-w-16 hover:text-secondary-color transition-colors duration-300 ease-in-out"
                       >
                         <FadeUp phrase={link.title} />
-                      </a>
+                      </Link>
                     </GsapMagnetic>
                   ))}
                 </li>

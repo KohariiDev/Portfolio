@@ -35,6 +35,7 @@ export default function SlidingImages() {
               <div className="relative w-[80%] h-[80%]">
                 <Image
                   fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   alt="image"
                   src={src.src}
                   className="object-cover rounded-xl"
@@ -59,6 +60,7 @@ export default function SlidingImages() {
               <div className="relative w-[80%] h-[80%]">
                 <Image
                   fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   alt="image"
                   src={src.src}
                   className="object-cover rounded-xl"
