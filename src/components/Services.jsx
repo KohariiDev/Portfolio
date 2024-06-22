@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
-
 import FadeUp from "./animation/FadeUp";
 
 export default function Services({ services, serviceText }) {
@@ -8,18 +6,11 @@ export default function Services({ services, serviceText }) {
 
   const container = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-
-    offset: ["start end", "end start"],
-  });
-  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
-
   return (
     <section
       ref={container}
       id="service"
-      className="px-4 md:px-16 pb-8 md:pb-16 xl:px-24 bg-hero-color overflow-hidden mt-[-200px]"
+      className="px-4 md:px-16 pb-8 md:pb-16 xl:px-24 bg-hero-color overflow-hidden mt-[-500px]"
     >
       <div className="flex flex-col md:flex-row justify-between mb-28">
         <div className="relative flex flex-col ml-auto mr-auto">

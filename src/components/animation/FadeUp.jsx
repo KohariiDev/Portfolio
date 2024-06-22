@@ -1,20 +1,21 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import { useInView, motion } from "framer-motion";
 
 const slideUp = (delay) => ({
   open: (index) => ({
     y: 0,
+    rotate: 0,
     opacity: 1,
     transition: {
-      delay: index * 0.05 + delay / 1000,
-      duration: 1.3,
+      delay: index * 0.02 + delay / 1000,
+      duration: 1.8,
       ease: [0.25, 0.1, 0.25, 1],
     },
   }),
-  closed: { y: 800, opacity: 0 },
+  closed: { y: 800, opacity: 0, rotate: 20 },
 });
 
-const FadeUp = ({ phrase, paragraphClass, delay = 0 }) => {
+const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
   const description = useRef(null);
   const isInView = useInView(description);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -25,13 +26,13 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0 }) => {
     }
   }, [isInView, hasAnimated]);
 
-  const words = phrase.split(" ");
-  const animationVariants = slideUp(delay);
+  const animationVariants = useMemo(() => slideUp(delay), [delay]);
+  const words = useMemo(() => phrase.split(" "), [phrase]);
 
   return (
     <div ref={description} className="overflow-hidden">
-      <div className="flex flex-col">
-        <p className={paragraphClass}>
+      <div>
+        <p className={`${paragraphClass}`} style={{ lineHeight }}>
           {words.map((word, index) => (
             <span className="inline-block overflow-hidden" key={index}>
               <motion.span
@@ -51,4 +52,4 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0 }) => {
   );
 };
 
-export default FadeUp;
+export default React.memo(FadeUp);
