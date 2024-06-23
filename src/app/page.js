@@ -1,13 +1,24 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
 // Components
 import Hero from "@/components/Hero";
 import TextPath from "@/components/TextPath";
 import Projects from "@/components/Projects";
-import Services from "@/components/Services";
-import SlidingImages from "@/components/SlidingImages";
-import Footer from "@/components/Footer";
 import PreLoader from "../components/Preloader";
+
+const Services = dynamic(() => import("@/components/Services"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const SlidingImages = dynamic(() => import("@/components/SlidingImages"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const Footer = dynamic(() => import("@/components/Footer"), {
+  loading: () => <p>Loading...</p>,
+});
 
 // Constants
 import {
@@ -29,11 +40,15 @@ export default function Home() {
   const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setisLoading(false);
       document.body.style.cursor = "default";
     }, 2000);
-  });
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <main>

@@ -8,7 +8,6 @@ import FadeUp from "@/components/animation/FadeUp";
 
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
-// Ensure GSAP plugins are registered
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalScroll = ({ project }) => {

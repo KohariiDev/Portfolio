@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useMemo } from "react";
 
-// Function to generate animation settings with an optional delay
 const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
   initial: { y: 300 },
   animate: { y: 0 },

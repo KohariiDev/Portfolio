@@ -8,7 +8,7 @@ const slideUp = (delay) => ({
     opacity: 1,
     transition: {
       delay: index * 0.02 + delay / 1000,
-      duration: 1.8,
+      duration: 2,
       ease: [0.25, 0.1, 0.25, 1],
     },
   }),

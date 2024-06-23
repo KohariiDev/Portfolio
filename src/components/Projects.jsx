@@ -6,8 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 import Link from "next/link";
 import { slugify } from "../../utils/slugify";
 import CustomCursor from "./design/ui/CustomCursor";
-
-import { videos } from "../../constants/";
+import Image from "next/image";
 
 export default function Projects({ projects }) {
   const containerRef = useRef(null);
@@ -54,59 +53,57 @@ export default function Projects({ projects }) {
     }
   };
 
+  const projectStyles = [
+    { zIndex: "z-30", bgClass: "bg-iphone" },
+    { zIndex: "z-20", bgClass: "bg-brainwave" },
+    { zIndex: "z-10", bgClass: "bg-arlen" },
+  ];
+
   return (
     <>
       <CustomCursor ref={cursorRef} />
       <section className="mb-0">
         <div ref={containerRef} className="relative h-[600vh]">
+          {[1, 2, 3].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute right-14 z-40 flex flex-col gap-20`}
+              style={{ top: `${i * 170}vh` }}
+            >
+              {[1, 2, 3].map((_, index) => (
+                <div key={index} className="lg:w-44 lg:h-24 xl:w-56 xl:h-32 bg-arlen relative">
+                  <Image
+                    src={projects[i].images[index]}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    alt="Description of the image"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
           <div
             ref={imageHolderRef}
             className="sticky top-0 h-screen flex flex-col justify-center items-center"
           >
-            <Link
-              href={`/project/${slugify(projects[0].title)}`}
-              passHref
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="bg-iphone w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center z-30"
-            >
-              <video className="w-3/5" autoPlay loop muted playsInline>
-                <source src={videos[0]} type="video/mp4" />
-                <source src={videos[0]} type="video/webm" />
-                <source src={videos[0]} type="video/ogg" />
-                Your browser does not support the video tag.
-              </video>
-            </Link>
-
-            <Link
-              href={`/project/${slugify(projects[1].title)}`}
-              passHref
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="bg-brainwave w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center z-20"
-            >
-              <video className="w-3/5" autoPlay loop muted playsInline>
-                <source src={videos[1]} type="video/mp4" />
-                <source src={videos[1]} type="video/webm" />
-                <source src={videos[1]} type="video/ogg" />
-                Your browser does not support the video tag.
-              </video>
-            </Link>
-
-            <Link
-              href={`/project/${slugify(projects[2].title)}`}
-              passHref
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="bg-iphone w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center z-10"
-            >
-              <video className="w-3/5" autoPlay loop muted playsInline>
-                <source src={videos[0]} type="video/mp4" />
-                <source src={videos[0]} type="video/webm" />
-                <source src={videos[0]} type="video/ogg" />
-                Your browser does not support the video tag.
-              </video>
-            </Link>
+            {projects.map((project, index) => (
+              <Link
+                key={project.title}
+                href={`/project/${slugify(project.title)}`}
+                passHref
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${projectStyles[index].bgClass} w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center ${projectStyles[index].zIndex}`}
+              >
+                <video className="w-3/5" autoPlay loop muted playsInline>
+                  <source src={project.video} type="video/mp4" />
+                  <source src={project.video} type="video/webm" />
+                  <source src={project.video} type="video/ogg" />
+                  Your browser does not support the video tag.
+                </video>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

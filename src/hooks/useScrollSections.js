@@ -25,7 +25,7 @@ const useScrollSections = (sections) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initialize the active section on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
