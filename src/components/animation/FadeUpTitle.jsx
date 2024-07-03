@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import React, { useMemo } from "react";
 
 const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
@@ -18,24 +18,26 @@ const FadeUpTitle = React.memo(({ word, delay = 0 }) => {
   );
 
   return (
-    <div style={{ display: "inline-block", overflow: "hidden" }}>
-      {word.split("").map((char, index) => (
-        <motion.span
-          key={index}
-          className="md:inline-block"
-          style={{ marginRight: char === " " ? "0.125em" : undefined }}
-          variants={FadeUpTitleAnimation}
-          initial="initial"
-          animate="animate"
-          transition={{
-            ...FadeUpTitleAnimation.transition,
-            delay: FadeUpTitleAnimation.transition.delay + index * 0.1,
-          }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </div>
+    <LazyMotion features={domAnimation}>
+      <div style={{ display: "inline-block", overflow: "hidden" }}>
+        {word.split("").map((char, index) => (
+          <m.span
+            key={index}
+            className="md:inline-block"
+            style={{ marginRight: char === " " ? "0.125em" : undefined }}
+            variants={FadeUpTitleAnimation}
+            initial="initial"
+            animate="animate"
+            transition={{
+              ...FadeUpTitleAnimation.transition,
+              delay: FadeUpTitleAnimation.transition.delay + index * 0.1,
+            }}
+          >
+            {char}
+          </m.span>
+        ))}
+      </div>
+    </LazyMotion>
   );
 });
 

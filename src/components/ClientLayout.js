@@ -26,10 +26,10 @@ const sections = [
 ];
 
 export default function ClientLayout({ children }) {
-  useSmoothScroll();
   const activeSection = useScrollSections(sections);
   const [navbarColor, setNavbarColor] = useState(sections[0].color);
   const scrollToSection = useScrollToSection();
+  useSmoothScroll();
 
   useEffect(() => {
     const handleHashChange = () => {

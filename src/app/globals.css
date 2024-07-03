@@ -40,14 +40,6 @@ picture {
   font-family: "Oswald", sans-serif;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 /* Ensure buttons have consistent appearance */
 button {
   background: none;
@@ -64,14 +56,14 @@ button {
 
 .horizontal-container {
   display: flex;
-  overflow-x: hidden; /* Hide the horizontal scrollbar */
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: 85vh; /* Full viewport height */
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 85vh;
 }
 
 .panel {
-  flex: 0 0 80vw; /* Ensure each panel takes full viewport width */
-  height: 100vh; /* Full viewport height */
+  flex: 0 0 80vw;
+  height: 100vh;
   display: flex;
 }
 
@@ -85,26 +77,6 @@ button {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
-/* .slide-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: bottom;
-}
-
-.slide-out {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  transform-origin: top;
-} */
 
 .fade-in {
   opacity: 0;

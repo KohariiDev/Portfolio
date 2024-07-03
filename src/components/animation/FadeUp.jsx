@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo } from "react";
-import { useInView, motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 const slideUp = (delay) => ({
   open: (index) => ({
@@ -8,11 +9,11 @@ const slideUp = (delay) => ({
     opacity: 1,
     transition: {
       delay: index * 0.02 + delay / 1000,
-      duration: 2,
+      duration: 1.2,
       ease: [0.25, 0.1, 0.25, 1],
     },
   }),
-  closed: { y: 800, opacity: 0, rotate: 20 },
+  closed: { y: 150, opacity: 0, rotate: 20 },
 });
 
 const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
@@ -30,12 +31,12 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
   const words = useMemo(() => phrase.split(" "), [phrase]);
 
   return (
-    <div ref={description} className="overflow-hidden">
-      <div>
-        <p className={`${paragraphClass}`} style={{ lineHeight }}>
+    <LazyMotion features={domAnimation}>
+      <div ref={description} className="overflow-hidden">
+        <p className={paragraphClass} style={{ lineHeight }}>
           {words.map((word, index) => (
             <span className="inline-block overflow-hidden" key={index}>
-              <motion.span
+              <m.span
                 className="inline-block"
                 variants={animationVariants}
                 custom={index}
@@ -43,12 +44,12 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
               >
                 {word}
                 {index < words.length - 1 && "\u00A0"}
-              </motion.span>
+              </m.span>
             </span>
           ))}
         </p>
       </div>
-    </div>
+    </LazyMotion>
   );
 };
 
