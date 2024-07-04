@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 import Link from "next/link";
-import { slugify } from "../../utils/slugify";
-import CustomCursor from "./design/ui/CustomCursor";
+import { slugify } from "@/utils/slugify";
+import CustomCursor from "@/ui/CustomCursor";
 import Image from "next/image";
 
 export default function Projects({ projects }) {

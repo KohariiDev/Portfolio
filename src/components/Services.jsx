@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import FadeUp from "./animation/FadeUp";
-import FadeUpTitle from "./animation/FadeUpTitle";
+import FadeUp from "@/utils/animations/FadeUp";
+import FadeUpTitle from "@/utils/animations/FadeUptitle";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
 export default function Services({ services, serviceText }) {

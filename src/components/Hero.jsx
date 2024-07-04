@@ -1,9 +1,9 @@
 "use client";
 
-import GsapMagnetic from "../components/animation/gsap";
-import Rounded from "../components/design/button";
-import FadeUp from "./animation/FadeUp";
-import FadeUpTitle from "./animation/FadeUpTitle";
+import GsapMagnetic from "@/utils/animations/gsap";
+import Rounded from "@/ui/button";
+import FadeUp from "@/utils/animations/FadeUp";
+import FadeUpTitle from "@/utils/animations/FadeUptitle";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 
