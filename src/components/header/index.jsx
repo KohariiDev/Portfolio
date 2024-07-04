@@ -2,7 +2,7 @@
 import styles from "./style.module.scss";
 import { LazyMotion, m, AnimatePresence } from "framer-motion";
 import { opacity, background } from "../animation/nav/anim";
-import { useNav } from "@/context/NavContext";
+import { useNav } from "../../context/NavContext";
 import Nav from "./nav";
 
 import loadFeatures from "@/utils/framerFeatures/loadFeatures";

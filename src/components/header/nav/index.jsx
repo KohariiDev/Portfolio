@@ -7,9 +7,9 @@ import Body from "./Body";
 import Footer from "./Footer";
 import Image from "./Image";
 import { links } from "@/data/navData";
-import { useNav } from "@/context/NavContext";
+import { useNav } from "../../../context/NavContext";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../../utils/framerFeatures/loadFeatures";
 
 export default function Index() {
   const [selectedLink, setSelectedLink] = useState({

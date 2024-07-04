@@ -1,11 +1,11 @@
 import { LazyMotion, m } from "framer-motion";
 import Link from "next/link";
 import styles from "./style.module.scss";
-import { blur, translate } from "@/components/animation/nav/anim";
-import useScrollToSection from "@/hooks/useScrollToSection";
-import { useNav } from "@/context/NavContext";
+import { blur, translate } from "../../../animation/nav/anim";
+import useScrollToSection from "../../../../hooks/useScrollToSection";
+import { useNav } from "../../../../context/NavContext";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../../../utils/framerFeatures/loadFeatures";
 
 export default function Body({ links, selectedLink, setSelectedLink }) {
   const scrollToSection = useScrollToSection();
