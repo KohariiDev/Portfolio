@@ -5,7 +5,7 @@ import { opacity, background } from "../animation/nav/anim";
 import { useNav } from "../../context/NavContext";
 import Nav from "./nav";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../utils/framerFeatures/loadFeatures";
 
 export default function index() {
   const { isNavActive, setIsNavActive } = useNav();

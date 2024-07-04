@@ -1,9 +1,9 @@
 import { LazyMotion, m } from "framer-motion";
 import Image from "next/image";
 import styles from "./style.module.scss";
-import { opacity } from "@/components/animation/nav/anim";
+import { opacity } from "../../../animation/nav/anim";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../../../utils/framerFeatures/loadFeatures";
 
 export default function Index({ src, isActive }) {
   return (

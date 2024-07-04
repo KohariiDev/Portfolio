@@ -1,8 +1,8 @@
 import styles from "./style.module.scss";
-import { translate } from "@/components/animation/nav/anim";
+import { translate } from "../../../animation/nav/anim";
 import { LazyMotion, m } from "framer-motion";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../../../utils/framerFeatures/loadFeatures";
 
 export default function Footer() {
   return (

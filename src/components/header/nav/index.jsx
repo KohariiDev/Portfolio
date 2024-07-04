@@ -6,7 +6,7 @@ import { height } from "../../animation/nav/anim";
 import Body from "./Body";
 import Footer from "./Footer";
 import Image from "./Image";
-import { links } from "@/data/navData";
+import { links } from "../../../data/navData";
 import { useNav } from "../../../context/NavContext";
 
 import loadFeatures from "../../../utils/framerFeatures/loadFeatures";
