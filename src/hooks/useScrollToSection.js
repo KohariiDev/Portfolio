@@ -4,7 +4,7 @@ const useScrollToSection = () => {
   const scrollToSection = useCallback((id, callback) => {
     const element = document.getElementById(id);
     if (element) {
-      // Disable pointer events
+      
       document.body.style.pointerEvents = "none";
 
       element.scrollIntoView({ behavior: "smooth" });
