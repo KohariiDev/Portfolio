@@ -1,4 +1,4 @@
-export const socials = {
+export const socialsData = {
   facebook: (
     <svg
       id="Layer_2"

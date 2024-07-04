@@ -1,8 +1,8 @@
-export const serviceText = {
+export const serviceTextData = {
   title: "about",
 };
 
-export const services = [
+export const servicesData = [
   {
     title: "Web Development",
     number: "01",

@@ -1,14 +1,18 @@
+"use client"
+
 import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-import Rounded from "@/ui/button";
-import GsapMagnetic from "@/utils/animations/gsap";
-import FadeUp from "@/utils/animations/FadeUp";
+import Rounded from "./ui/button";
+import GsapMagnetic from "./animation/gsap";
+import FadeUp from "./animation/FadeUp";
 import useScrollToSection from "@/hooks/useScrollToSection";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import Link from "next/link";
 
-export default function Footer({ footer, openEmailClient }) {
+import openEmailClient from "@/utils/openEmailClient";
+
+export default function Footer({ footer }) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,

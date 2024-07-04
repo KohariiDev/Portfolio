@@ -1,5 +1,6 @@
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, m } from "framer-motion";
 import React, { useMemo } from "react";
+import loadFeatures from "@/utils/framerFeatures/loadFeatures";
 
 const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
   initial: { y: 300 },
@@ -11,14 +12,14 @@ const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
   },
 });
 
-const FadeUpTitle = React.memo(({ word, delay = 0 }) => {
+const FadeUpTitle = ({ word, delay = 0 }) => {
   const FadeUpTitleAnimation = useMemo(
     () => getFadeUpTitleAnimation(delay / 1000),
     [delay]
   );
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <div style={{ display: "inline-block", overflow: "hidden" }}>
         {word.split("").map((char, index) => (
           <m.span
@@ -39,6 +40,6 @@ const FadeUpTitle = React.memo(({ word, delay = 0 }) => {
       </div>
     </LazyMotion>
   );
-});
+};
 
-export default FadeUpTitle;
+export default React.memo(FadeUpTitle);

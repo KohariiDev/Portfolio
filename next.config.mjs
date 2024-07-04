@@ -1,4 +1,3 @@
-// next.config.mjs
 import withVideos from "next-videos";
 import createBundleAnalyzer from "@next/bundle-analyzer";
 

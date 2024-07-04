@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import FadeUp from "@/utils/animation/FadeUp";
+import FadeUp from "@/components/animation/FadeUp";
 
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
@@ -73,22 +73,22 @@ const HorizontalScroll = ({ project }) => {
             <Image
               src={project.projectsPageData.panelTwo.image}
               alt="hero"
-              layout="fill"
-              objectFit="contain"
-              className="object-cover w-1/2 h-1/2"
+              fill
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-contain w-1/2 h-1/2"
             />
           </div>
         </section>
         <section className="panel">
           <div className="w-full h-full relative">
             <video
-              src="/images/project-one/iphonevideo.mp4" // Assuming your video source is stored similarly to images
+              src="/images/project-one/iphonevideo.mp4"
               loop
               autoPlay
               muted
               playsInline
               className="object-cover w-full h-full"
-              style={{ objectFit: "contain" }} // Ensures the video covers the area fully without being stretched
+              style={{ objectFit: "contain" }}
             />
           </div>
         </section>

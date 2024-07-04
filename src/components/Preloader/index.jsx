@@ -1,11 +1,23 @@
 "use client";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideUp } from "./anim";
 
 export default function Index() {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [isLoading, setisLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setisLoading(false);
+      document.body.style.cursor = "default";
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -32,41 +44,45 @@ export default function Index() {
   };
 
   return (
-    <motion.div
-      variants={slideUp}
-      initial="initial"
-      exit="exit"
-      className={`${styles.introduction} text-6xl font-bold text-hero-color`}
-    >
-      {dimension.width > 0 && (
-        <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
-            <motion.span
-              initial={{ y: -300 }} // Start from above the screen
-              animate={{
-                y: 0, // End at the original position
-                transition: {
-                  type: "spring",
-                  delay: 0.5,
-                  stiffness: 80, // How rigid the spring is
-                  damping: 2, // Resistance, lower for more bounciness
-                  mass: 0.2, // Mass of the object, affects the momentum
-                  bounce: 0.2, // Bounciness of the spring, 0 to 1 (0 for no bounce, 1 for super bouncy)
-                  duration: 1, // Duration of the animation in seconds (optional)
-                },
-              }}
-            ></motion.span>
-            HELLO
-          </motion.p>
-          <svg>
-            <motion.path
-              variants={curve}
-              initial="initial"
-              exit="exit"
-            ></motion.path>
-          </svg>
-        </>
-      )}
-    </motion.div>
+    <AnimatePresence mode="wait">
+      {isLoading && (
+        <motion.div
+          variants={slideUp}
+          initial="initial"
+          exit="exit"
+          className={`${styles.introduction} text-6xl font-bold text-hero-color`}
+        >
+          {dimension.width > 0 && (
+            <>
+              <motion.p variants={opacity} initial="initial" animate="enter">
+                <motion.span
+                  initial={{ y: -300 }} // Start from above the screen
+                  animate={{
+                    y: 0, // End at the original position
+                    transition: {
+                      type: "spring",
+                      delay: 0.5,
+                      stiffness: 80, // How rigid the spring is
+                      damping: 2, // Resistance, lower for more bounciness
+                      mass: 0.2, // Mass of the object, affects the momentum
+                      bounce: 0.2, // Bounciness of the spring, 0 to 1 (0 for no bounce, 1 for super bouncy)
+                      duration: 1, // Duration of the animation in seconds (optional)
+                    },
+                  }}
+                ></motion.span>
+                HELLO
+              </motion.p>
+              <svg>
+                <motion.path
+                  variants={curve}
+                  initial="initial"
+                  exit="exit"
+                ></motion.path>
+              </svg>
+            </>
+          )}
+        </motion.div>
+      )}{" "}
+    </AnimatePresence>
   );
 }

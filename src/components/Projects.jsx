@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -5,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
-import CustomCursor from "@/ui/CustomCursor";
+import CustomCursor from "./ui/CustomCursor";
 import Image from "next/image";
 
 export default function Projects({ projects }) {

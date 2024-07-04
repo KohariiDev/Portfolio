@@ -1,15 +1,19 @@
 "use client";
 
-import GsapMagnetic from "@/utils/animations/gsap";
-import Rounded from "@/ui/button";
-import FadeUp from "@/utils/animations/FadeUp";
-import FadeUpTitle from "@/utils/animations/FadeUptitle";
+import GsapMagnetic from "./animation/gsap";
+import Rounded from "./ui/button";
+import FadeUp from "./animation/FadeUp";
+import FadeUpTitle from "./animation/FadeUpTitle";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, m } from "framer-motion";
+
+import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+
+import openEmailClient from "@/utils/openEmailClient";
 
 import { useRef } from "react";
 
-const Hero = ({ socials, hero, openEmailClient }) => {
+const Hero = ({ socials, hero }) => {
   const redDotRef = useRef(null);
   const socialsRef = useRef(null);
   const currentTimeRef = useRef(null);
@@ -24,7 +28,7 @@ const Hero = ({ socials, hero, openEmailClient }) => {
   const { title, para, cta, buttonAction, link } = hero;
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <section
         id="hero"
         className="relative min-h-screen overflow-hidden bg-hero-color text-slate-900 flex flex-col pt-36 px-1 md:px-8 xl:px-20 "

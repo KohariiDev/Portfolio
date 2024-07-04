@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo } from "react";
-import { useInView } from "framer-motion";
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
 const slideUp = (delay) => ({
   open: (index) => ({
@@ -18,7 +18,7 @@ const slideUp = (delay) => ({
 
 const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
   const description = useRef(null);
-  const isInView = useInView(description);
+  const isInView = useInViewAnimation(description);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {

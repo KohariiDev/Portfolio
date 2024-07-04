@@ -1,8 +1,10 @@
+"use client"
+
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 
-import { slider1, slider2 } from "../../constants";
+import { slider1, slider2 } from "@/data/sliderData";
 
 export default function SlidingImages() {
   const container = useRef(null);
