@@ -56,17 +56,17 @@ export default function Index() {
             <>
               <motion.p variants={opacity} initial="initial" animate="enter">
                 <motion.span
-                  initial={{ y: -300 }} // Start from above the screen
+                  initial={{ y: -300 }}
                   animate={{
-                    y: 0, // End at the original position
+                    y: 0,
                     transition: {
                       type: "spring",
                       delay: 0.5,
-                      stiffness: 80, // How rigid the spring is
-                      damping: 2, // Resistance, lower for more bounciness
-                      mass: 0.2, // Mass of the object, affects the momentum
-                      bounce: 0.2, // Bounciness of the spring, 0 to 1 (0 for no bounce, 1 for super bouncy)
-                      duration: 1, // Duration of the animation in seconds (optional)
+                      stiffness: 80,
+                      damping: 2,
+                      mass: 0.2,
+                      bounce: 0.2,
+                      duration: 1,
                     },
                   }}
                 ></motion.span>

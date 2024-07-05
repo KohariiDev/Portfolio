@@ -2,7 +2,7 @@ import React from "react";
 
 const loading = () => {
   return (
-    <section className="pointer-events-none fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-zinc-950">
+    <section className="pointer-events-none fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-[#0e0e0e]">
       <div role="status">
         <svg
           aria-hidden="true"

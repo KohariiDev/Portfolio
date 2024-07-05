@@ -10,7 +10,7 @@ import useScrollToSection from "../hooks/useScrollToSection";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import Link from "next/link";
 
-import openEmailClient from "@/utils/openEmailClient";
+import openEmailClient from "../utils/openEmailClient";
 
 export default function Footer({ footer }) {
   const container = useRef(null);

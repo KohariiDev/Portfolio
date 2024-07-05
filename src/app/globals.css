@@ -21,11 +21,24 @@ ol[role="list"] {
   list-style: none;
 }
 
+/* Page transitions */
+
+.page-transition {
+  opacity: 0;
+  background-color: #f5efef;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   background-color: #f5efef;
+
+  transition-property: opacity, background-color, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 800ms;
 }
 
 /* Make images easier to work with */
@@ -76,18 +89,4 @@ button {
 .horizontal-container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

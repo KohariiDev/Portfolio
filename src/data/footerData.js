@@ -1,4 +1,4 @@
-import textImage from "@/../public/images/footer-text.svg";
+import textImage from "../../public/images/footer-text.svg";
 
 export const footerData = {
   textImage: textImage,

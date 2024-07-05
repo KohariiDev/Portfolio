@@ -10,6 +10,8 @@ import { slugify } from "../utils/slugify";
 import CustomCursor from "./ui/CustomCursor";
 import Image from "next/image";
 
+import TransitionLink from "../utils/TransitionLink";
+
 export default function Projects({ projects }) {
   const containerRef = useRef(null);
   const imageHolderRef = useRef(null);
@@ -90,7 +92,7 @@ export default function Projects({ projects }) {
             className="sticky top-0 h-screen flex flex-col justify-center items-center"
           >
             {projects.map((project, index) => (
-              <Link
+              <TransitionLink
                 key={project.title}
                 href={`/project/${slugify(project.title)}`}
                 passHref
@@ -104,7 +106,7 @@ export default function Projects({ projects }) {
                   <source src={project.video} type="video/ogg" />
                   Your browser does not support the video tag.
                 </video>
-              </Link>
+              </TransitionLink>
             ))}
           </div>
         </div>
