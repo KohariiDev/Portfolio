@@ -1,10 +1,10 @@
-import Picture1 from "@/../public/images/hero-image.webp";
-import Picture2 from "@/../public/images/desktop.png";
-import Picture3 from "@/../public/images/hero-image.webp";
+import Picture1 from "../../public/images/hero-image.webp";
+import Picture2 from "../../public/images/desktop.png";
+import Picture3 from "../../public/images/hero-image.webp";
 
-import iphoneVideo from "@/../public/images/project-one/iphone-video.mp4";
-import brainWaveVideo from "@/../public/images/project-two/brainwave-video.mp4";
-import arlenVideo from "@/../public/images/project-three/arlen-video.mp4";
+import iphoneVideo from "../../public/images/project-one/iphone-video.mp4";
+import brainWaveVideo from "../../public/images/project-two/brainwave-video.mp4";
+import arlenVideo from "../../public/images/project-three/arlen-video.mp4";
 
 export const videos = [iphoneVideo, brainWaveVideo, arlenVideo];
 
