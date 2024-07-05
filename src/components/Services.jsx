@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import { useInViewAnimation } from "../hooks/useInViewAnimation";
 
 export default function Services({ services, serviceText }) {
   const { title } = serviceText;

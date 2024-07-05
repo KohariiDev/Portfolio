@@ -1,9 +1,9 @@
 import "./globals.css";
 import Header from "../components/header";
-import { NavProvider } from "@/context/NavContext";
+import { NavProvider } from "../context/NavContext";
 import { Oswald } from "next/font/google";
 
-import { LenisProvider } from "@/context/LenisProvider";
+import { LenisProvider } from "../context/LenisProvider";
 
 export const metadata = {
   title: "Create Next App",

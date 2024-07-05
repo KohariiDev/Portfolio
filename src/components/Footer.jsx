@@ -6,8 +6,8 @@ import { useScroll, motion, useTransform } from "framer-motion";
 import Rounded from "./ui/button";
 import GsapMagnetic from "./animation/gsap";
 import FadeUp from "./animation/FadeUp";
-import useScrollToSection from "@/hooks/useScrollToSection";
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import useScrollToSection from "../hooks/useScrollToSection";
+import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import Link from "next/link";
 
 import openEmailClient from "@/utils/openEmailClient";

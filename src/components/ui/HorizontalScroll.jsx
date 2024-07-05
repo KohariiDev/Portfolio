@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import FadeUp from "@/components/animation/FadeUp";
+import FadeUp from "../animation/FadeUp";
 
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import { useInViewAnimation } from "../../hooks/useInViewAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 

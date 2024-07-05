@@ -1,8 +1,8 @@
 import { projects } from "../../../../constants";
 import { notFound } from "next/navigation";
-import { slugify } from "@/utils/slugify";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import HorizontalScroll from "@/components/ui/HorizontalScroll";
+import { slugify } from "../utils/slugify";
+import { ContainerScroll } from "../../../components/ui/container-scroll-animation";
+import HorizontalScroll from "../../../components/ui/HorizontalScroll";
 import Image from "next/image";
 
 export async function generateStaticParams() {

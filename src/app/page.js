@@ -1,20 +1,20 @@
 import dynamic from "next/dynamic";
 
 // Components
-import Hero from "@/components/Hero";
-import TextPath from "@/components/TextPath";
-import Projects from "@/components/Projects";
-import PreLoader from "@/components/Preloader";
+import Hero from "../components/Hero";
+import TextPath from "../components/TextPath";
+import Projects from "../components/Projects";
+import PreLoader from "../components/Preloader";
 
-const Services = dynamic(() => import("@/components/Services"), {
+const Services = dynamic(() => import("../components/Services"), {
   loading: () => <p>Loading...</p>,
 });
 
-const SlidingImages = dynamic(() => import("@/components/SlidingImages"), {
+const SlidingImages = dynamic(() => import("../components/SlidingImages"), {
   loading: () => <p>Loading...</p>,
 });
 
-const Footer = dynamic(() => import("@/components/Footer"), {
+const Footer = dynamic(() => import("../components/Footer"), {
   loading: () => <p>Loading...</p>,
 });
 
@@ -26,7 +26,7 @@ import {
   serviceTextData,
   socialsData,
   textPathData,
-} from "@/data";
+} from "../data/index";
 
 export default function Home() {
   return (

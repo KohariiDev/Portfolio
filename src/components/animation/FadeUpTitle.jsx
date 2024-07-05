@@ -1,6 +1,6 @@
 import { LazyMotion, m } from "framer-motion";
 import React, { useMemo } from "react";
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../../utils/framerFeatures/loadFeatures";
 
 const getFadeUpTitleAnimation = (additionalDelay = 0) => ({
   initial: { y: 300 },

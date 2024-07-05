@@ -4,12 +4,12 @@ import GsapMagnetic from "./animation/gsap";
 import Rounded from "./ui/button";
 import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import { LazyMotion, m } from "framer-motion";
 
-import loadFeatures from "@/utils/framerFeatures/loadFeatures";
+import loadFeatures from "../utils/framerFeatures/loadFeatures";
 
-import openEmailClient from "@/utils/openEmailClient";
+import openEmailClient from "../utils/openEmailClient";
 
 import { useRef } from "react";
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo } from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import { useInViewAnimation } from "../../hooks/useInViewAnimation";
 
 const slideUp = (delay) => ({
   open: (index) => ({
