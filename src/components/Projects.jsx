@@ -9,6 +9,8 @@ import { slugify } from "../utils/slugify";
 import CustomCursor from "./ui/CustomCursor";
 import Image from "next/image";
 
+import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
+
 import TransitionLink from "../utils/TransitionLink";
 
 export default function Projects({ projects }) {
@@ -70,13 +72,13 @@ export default function Projects({ projects }) {
           {[1, 2, 3].map((_, i) => (
             <div
               key={i}
-              className={`hidden absolute right-14 z-40 lg:flex flex-col gap-20`}
+              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex`}
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {[1, 2, 3].map((_, index) => (
                 <div
                   key={index}
-                  className="lg:w-44 lg:h-24 xl:w-56 xl:h-32 bg-arlen relative"
+                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56"
                 >
                   {index === 0 || index === 2 ? (
                     <video
@@ -84,8 +86,8 @@ export default function Projects({ projects }) {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
-                      src={projects[i].video[index === 0 ? 0 : 1]}
+                      className="h-full w-full object-cover"
+                      src={iphoneVideo}
                     />
                   ) : (
                     <Image
@@ -102,7 +104,7 @@ export default function Projects({ projects }) {
           ))}
           <div
             ref={imageHolderRef}
-            className="sticky top-0 h-screen flex flex-col justify-center items-center"
+            className="sticky top-0 flex h-screen flex-col items-center justify-center"
           >
             {projects.map((project, index) => (
               <TransitionLink
@@ -111,14 +113,14 @@ export default function Projects({ projects }) {
                 passHref
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className={`${projectStyles[index].bgClass} w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center ${projectStyles[index].zIndex}`}
+                className={`${projectStyles[index].bgClass} absolute left-0 top-0 flex h-[100vh] w-full items-center justify-center ${projectStyles[index].zIndex}`}
               >
-                <div className="relative w-2/4 h-2/4 overflow-hidden">
+                <div className="relative h-2/4 w-2/4 overflow-hidden">
                   <Image
                     src={project.src[index]}
                     alt="Description of the image"
                     sizes="50vw"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                     fill
                   />
                 </div>

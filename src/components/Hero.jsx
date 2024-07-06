@@ -31,9 +31,9 @@ const Hero = ({ socials, hero }) => {
     <LazyMotion features={loadFeatures}>
       <section
         id="hero"
-        className="relative min-h-screen overflow-hidden bg-hero-color text-slate-900 flex flex-col pt-36 px-1 md:px-8 xl:px-20 "
+        className="relative flex min-h-screen flex-col overflow-hidden bg-hero-color px-1 pt-36 text-slate-900 md:px-8 xl:px-20"
       >
-        <m.h1 className="absolute left-2/4 overflow-hidden -translate-x-2/4 top-12 text-7xl text-center md:text-left md:top-20 md:text-[7rem] lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl tracking-tight md:text-nowrap font-semibold">
+        <m.h1 className="absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-tight md:top-20 md:text-nowrap md:text-left md:text-[7rem] lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl">
           <FadeUpTitle word={title} delay={2000} />
           <m.span
             initial={{ x: 100 }}
@@ -50,11 +50,11 @@ const Hero = ({ socials, hero }) => {
               },
             }}
             ref={redDotRef}
-            className="md:block hidden md:w-[15px] md:h-[15px] lg:w-[20px] lg:h-[20px] xl:w-[30px] xl:h-[30px] bg-secondary-color rounded-full ml-auto mr-1 lg:mr-2 xl:mr-3"
+            className="ml-auto mr-1 hidden rounded-full bg-secondary-color md:block md:h-[15px] md:w-[15px] lg:mr-2 lg:h-[20px] lg:w-[20px] xl:mr-3 xl:h-[30px] xl:w-[30px]"
           ></m.span>
         </m.h1>
 
-        <div className="hidden lg:flex items-center gap-10 opacity-90 ml-auto absolute right-5 bottom-5">
+        <div className="absolute bottom-5 right-5 ml-auto hidden items-center gap-10 opacity-90 lg:flex">
           {socialsArray.map((socials, i) => {
             return (
               <m.span
@@ -82,28 +82,28 @@ const Hero = ({ socials, hero }) => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
-          className="ml-auto mr-auto mt-16 md:mt-24 lg:mt-40 xl:mt-40 mb-10"
+          className="ml-auto mr-auto mt-16 md:mt-24 lg:mt-40 xl:mt-40"
         >
           <Rounded
             backgroundColor="#ef4444"
-            className="rounded-full w-[130px] h-[130px] flex items-center justify-center border-[1px] cursor-pointer border-secondary-color text-slate-700 hover:text-slate-200 duration-500 ease-in-out transition-colors"
+            className="flex h-[130px] w-[130px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200"
           >
             <button
               onClick={() =>
                 openEmailClient(
                   "kohari.dev@gmail.com",
                   "Contact Us",
-                  "Please enter your message here"
+                  "Please enter your message here",
                 )
               }
-              className="uppercase z-50"
+              className="z-50 uppercase"
             >
               {buttonAction}
             </button>
           </Rounded>
         </m.div>
 
-        <div className=" md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto text-center max-w-xl ml-auto mr-auto">
+        <div className="ml-auto mr-auto max-w-xl text-center md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto">
           <FadeUp
             phrase={para}
             delay={4000}
@@ -125,12 +125,12 @@ const Hero = ({ socials, hero }) => {
                 mass: 1,
               },
             }}
-            className="hidden lg:flex opacity-60 text-lg font-mono font-semibold w-48 justify-center"
+            className="hidden w-48 justify-center font-mono text-lg font-semibold opacity-60 lg:flex"
           >
             Version 1.0
           </m.p>
         </div>
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
           <m.p
             ref={ctaRef}
             initial={{ y: 100 }}
@@ -144,7 +144,7 @@ const Hero = ({ socials, hero }) => {
                 mass: 1,
               },
             }}
-            className="hidden lg:flex opacity-85 text-slate-800 tracking-widest uppercase"
+            className="hidden uppercase tracking-widest text-slate-800 opacity-85 lg:flex"
           >
             {cta}
           </m.p>
