@@ -19,21 +19,20 @@ export default function Projects({ projects }) {
 
   useEffect(() => {
     if (!containerRef.current || !imageHolderRef.current) return;
-
+  
     const elements = imageHolderRef.current.children;
-
+  
     gsap.set(elements, { clipPath: "inset(0 0 0 0)" });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 2,
-        },
-      })
-      .to(elements, { clipPath: "inset(0 0 100% 0)", stagger: 1 }, ">-2");
+  
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "20% center",
+        end: "bottom bottom",
+        scrub: 2,
+      },
+    })
+    .to(elements, { clipPath: "inset(0 0 100% 0)", stagger: 1 }, ">-2");
   }, []);
 
   const handleMouseEnter = () => {
@@ -72,7 +71,7 @@ export default function Projects({ projects }) {
             <div
               key={i}
               className={`absolute right-14 z-40 flex flex-col gap-20`}
-              style={{ top: `${i * 170}vh` }}
+              style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {[1, 2, 3].map((_, index) => (
                 <div key={index} className="lg:w-44 lg:h-24 xl:w-56 xl:h-32 bg-arlen relative">

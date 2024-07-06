@@ -13,7 +13,7 @@ const slideUp = (delay) => ({
       ease: [0.25, 0.1, 0.25, 1],
     },
   }),
-  closed: { y: 150, opacity: 0, rotate: 20 },
+  closed: { y: 180, opacity: 0, rotate: 20 },
 });
 
 const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
