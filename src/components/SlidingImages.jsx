@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -20,27 +20,27 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="mt-28 flex flex-col gap-[3vw] relative bg-hero-color md:z-[1] overflow-hidden"
+      className="relative mt-28 flex flex-col gap-[3vw] overflow-hidden bg-hero-color md:z-[1]"
     >
       <motion.div
         style={{ x: x1 }}
-        className="flex relative gap-[3vw] w-[120vw] left-[-10vw]"
+        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
       >
         {slider1.map((project, index) => {
           const { color, src } = project;
           return (
             <div
               key={index}
-              className="w-[25%] h-[20vw] flex items-center justify-center rounded-xl"
+              className="flex h-[20vw] w-[25%] items-center justify-center rounded-xl"
               style={{ backgroundColor: color }}
             >
-              <div className="relative w-[80%] h-[80%]">
+              <div className="relative h-[80%] w-[80%]">
                 <Image
                   fill
                   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   alt="image"
                   src={src.src}
-                  className="object-cover rounded-xl"
+                  className="rounded-xl object-cover"
                 />
               </div>
             </div>
@@ -49,23 +49,23 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="flex relative gap-[3vw] w-[120vw] left-[-10vw]"
+        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
       >
         {slider2.map((project, index) => {
           const { color, src } = project;
           return (
             <div
               key={index}
-              className="w-[25%] h-[20vw] flex items-center justify-center rounded-xl"
+              className="flex h-[20vw] w-[25%] items-center justify-center rounded-xl"
               style={{ backgroundColor: color }}
             >
-              <div className="relative w-[80%] h-[80%]">
+              <div className="relative h-[80%] w-[80%]">
                 <Image
                   fill
                   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   alt="image"
                   src={src.src}
-                  className="object-cover rounded-xl"
+                  className="rounded-xl object-cover"
                 />
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function SlidingImages() {
         style={{ height }}
         className="relative mt-[500px] md:mt-[200px] lg:mt-[100px]"
       >
-        <div className="lg:h-[1550%] w-[120%] left-[-10%] rounded-b-full bg-hero-color z-[1] absolute shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
+        <div className="absolute left-[-10%] z-[1] w-[120%] rounded-b-full bg-hero-color shadow-[0px_60px_50px_rgba(0,0,0,0.748)] lg:h-[1550%]"></div>
       </motion.div>
     </div>
   );

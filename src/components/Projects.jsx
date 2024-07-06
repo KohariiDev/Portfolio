@@ -70,7 +70,7 @@ export default function Projects({ projects }) {
           {[1, 2, 3].map((_, i) => (
             <div
               key={i}
-              className={`absolute right-14 z-40 flex flex-col gap-20`}
+              className={`hidden absolute right-14 z-40 lg:flex flex-col gap-20`}
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {[1, 2, 3].map((_, index) => (

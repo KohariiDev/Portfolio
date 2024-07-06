@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -32,25 +32,25 @@ export default function Footer({ footer }) {
     <motion.div
       style={{ y }}
       ref={container}
-      className="text-white overflow-hidden flex flex-col items-center justify-center bg-[#141516] relative"
+      className="relative flex flex-col items-center justify-center overflow-hidden bg-[#141516] text-white"
     >
-      <div className="pt-[200px] w-full max-w-[1800px] bg-[#141516]">
+      <div className="w-full max-w-[1800px] bg-[#141516] pt-[200px]">
         <Image
           src={footer.textImage}
-          className="w-full h-full"
+          className="h-full w-full"
           sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Footer Text"
         />
-        <div className="border-b border-gray-500 pb-[100px] md:mx-[200px] relative">
+        <div className="relative border-b border-gray-500 pb-[100px] md:mx-[200px]">
           {/* Navigation */}
           <motion.div
             style={{ x }}
-            className="absolute flex right-[calc(100%-100px)] md:right-[calc(100%-0px)] lg:right-[calc(100%-100px)] top-[calc(100%-50px)]"
+            className="absolute right-[calc(100%-100px)] top-[calc(100%-50px)] flex md:right-[calc(100%-0px)] lg:right-[calc(100%-100px)]"
           >
             <div>
               <ul>
                 <li className="flex flex-col gap-6 uppercase">
-                  <span className="text-red-500 font-extrabold tracking-wider md:text-3xl">
+                  <span className="font-extrabold tracking-wider text-red-500 md:text-3xl">
                     <FadeUp phrase="NAVIGATION" />
                   </span>
                   {footer.links.map((link, index) => (
@@ -63,7 +63,7 @@ export default function Footer({ footer }) {
                           e.preventDefault();
                           scrollToSection(link.href.slice(1));
                         }}
-                        className="text-hero-color uppercase cursor-pointer max-w-16 hover:text-secondary-color transition-colors duration-300 ease-in-out"
+                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color"
                       >
                         <FadeUp phrase={link.title} />
                       </Link>
@@ -75,21 +75,21 @@ export default function Footer({ footer }) {
           </motion.div>
 
           {/* Navigation button */}
-          <motion.div className="lg:absolute flex items-center justify-center right-[calc(100%-100px)] md:right-[calc(100%-0px)] lg:left-[calc(100%-0%)] top-[calc(100%-90px)]">
+          <motion.div className="right-[calc(100%-100px)] top-[calc(100%-90px)] hidden items-center justify-center md:right-[calc(100%-0px)] md:flex lg:absolute lg:left-[calc(100%-0%)]">
             <div>
               <Rounded
                 backgroundColor="#ef4444"
-                className="w-[180px] h-[180px] bg-hero-color text-slate-900 rounded-full flex items-center justify-center cursor-pointer hover:text-slate-300 transition-colors duration-300 ease-in-out"
+                className="flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-hero-color text-slate-900 transition-colors duration-300 ease-in-out hover:text-slate-300"
               >
                 <button
                   onClick={() =>
                     openEmailClient(
                       "kohari.dev@gmail.com",
                       "Contact Us",
-                      "Please enter your message here"
+                      "Please enter your message here",
                     )
                   }
-                  className="m-0 uppercase font-semibold z-50 relative"
+                  className="relative z-50 m-0 font-semibold uppercase"
                 >
                   Contact
                 </button>
@@ -100,19 +100,19 @@ export default function Footer({ footer }) {
           {/* Socials */}
           <motion.div
             style={{ x }}
-            className="absolute flex left-[calc(100%-150px)] md:left-[calc(100%-100px)] lg:left-[calc(100%-400px)] top-[calc(100%-50px)]"
+            className="absolute left-[calc(100%-150px)] top-[calc(100%-50px)] flex md:left-[calc(100%-100px)] lg:left-[calc(100%-400px)]"
           >
             <div>
               <ul>
                 <li className="flex flex-col gap-6 uppercase">
-                  <span className="text-red-500 font-extrabold tracking-wider md:text-3xl">
+                  <span className="font-extrabold tracking-wider text-red-500 md:text-3xl">
                     <FadeUp phrase="SOCIALS" />
                   </span>
                   {footer.socials.map((social, index) => (
                     <GsapMagnetic key={index}>
                       <a
                         href={social.href}
-                        className="text-hero-color uppercase cursor-pointer max-w-16 hover:text-secondary-color transition-colors duration-300 ease-in-out"
+                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color"
                       >
                         <FadeUp phrase={social.title} />
                       </a>
@@ -130,19 +130,19 @@ export default function Footer({ footer }) {
             viewBox="0 0 9 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[30%] left-full"
+            className="absolute left-full top-[30%]"
           ></motion.svg>
         </div>
-        <div className="relative flex text-3xl md:text-6xl lg:text-8xl flex-col mt-[300px] md:px-10 md:py-5 font-bold leading-none">
+        <div className="relative mt-[300px] flex flex-col text-3xl font-bold leading-none md:px-10 md:py-5 md:text-6xl lg:text-8xl">
           <span className="text-red-500">
             <FadeUp phrase="© 2024" />
           </span>
-          <span className=" uppercase text-nowrap">
+          <span className="text-nowrap uppercase">
             <FadeUp phrase="NORBERT KOHARI" />
           </span>
           <motion.span
             ref={redDotRef}
-            className="hidden lg:flex absolute left-[713px] top-[105px] w-[20px] h-[20px] bg-secondary-color rounded-full"
+            className="absolute left-[713px] top-[105px] hidden h-[20px] w-[20px] rounded-full bg-secondary-color lg:flex"
           ></motion.span>
         </div>
       </div>

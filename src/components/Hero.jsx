@@ -82,7 +82,7 @@ const Hero = ({ socials, hero }) => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
-          className="ml-auto mr-auto mt-16 md:mt-24 xl:mt-40 mb-10"
+          className="ml-auto mr-auto mt-16 md:mt-24 lg:mt-40 xl:mt-40 mb-10"
         >
           <Rounded
             backgroundColor="#ef4444"
@@ -103,7 +103,7 @@ const Hero = ({ socials, hero }) => {
           </Rounded>
         </m.div>
 
-        <div className=" md:mb-auto lg:mb-[75px] xl:mb-auto text-center max-w-xl ml-auto mr-auto">
+        <div className=" md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto text-center max-w-xl ml-auto mr-auto">
           <FadeUp
             phrase={para}
             delay={4000}

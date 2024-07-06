@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -22,7 +22,7 @@ export default function TextPath({ textPath }) {
 
   return (
     <div id="textPath" ref={container} className="bg-hero-color">
-      <svg className="w-full mb-0" viewBox="0 0 250 90">
+      <svg className="mb-0 w-full" viewBox="0 0 250 90">
         <path
           fill="none"
           id="curve"
@@ -49,13 +49,13 @@ export default function TextPath({ textPath }) {
 const Work = ({ scrollProgress, text2 }) => {
   const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
   return (
-    <div id="work" className="h-[250px] bg-project-color overflow-hidden">
+    <div id="work" className="bg-project-color h-[250px] overflow-hidden">
       <motion.div
         style={{ y }}
-        className="h-full relative bg-iphone flex justify-center items-center p-10"
+        className="relative flex h-full items-center justify-center bg-iphone p-10"
       >
         <div className="flex">
-          <h1 className="text-projects-color text-8xl md:text-14xl flex justify-center items-center tracking-widest font-semibold">
+          <h1 className="flex items-center justify-center text-8xl font-semibold tracking-widest text-projects-color md:text-14xl">
             WORK
           </h1>
         </div>
