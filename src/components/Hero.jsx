@@ -106,7 +106,7 @@ const Hero = ({ socials, hero }) => {
         <div className=" md:mb-auto lg:mb-[75px] xl:mb-auto text-center max-w-xl ml-auto mr-auto">
           <FadeUp
             phrase={para}
-            delay={3600}
+            delay={4000}
             paragraphClass="text-lg opacity-85"
           />
         </div>

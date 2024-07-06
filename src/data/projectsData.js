@@ -1,5 +1,5 @@
-import iphoneVideo from "../../public/images/project-one/iphone-video.mp4";
-import iphonePhoneVideo from "../../public/images/project-one/iphone-phone-video.mp4";
+import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
+import iphonePhoneVideo from "../../public/videos/iphone/iphone-phone-video.mp4";
 
 import iphone from "../../public/images/project-one/iphone.webp";
 import iphonePhone from "../../public/images/project-one/iphone-phone.webp";
