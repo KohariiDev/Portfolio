@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import Link from "next/link";
 import { slugify } from "../utils/slugify";
 import CustomCursor from "./ui/CustomCursor";
 import Image from "next/image";
@@ -19,20 +18,21 @@ export default function Projects({ projects }) {
 
   useEffect(() => {
     if (!containerRef.current || !imageHolderRef.current) return;
-  
+
     const elements = imageHolderRef.current.children;
-  
+
     gsap.set(elements, { clipPath: "inset(0 0 0 0)" });
-  
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "20% center",
-        end: "bottom bottom",
-        scrub: 2,
-      },
-    })
-    .to(elements, { clipPath: "inset(0 0 100% 0)", stagger: 1 }, ">-2");
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "20% center",
+          end: "bottom bottom",
+          scrub: 2,
+        },
+      })
+      .to(elements, { clipPath: "inset(0 0 100% 0)", stagger: 1 }, ">-2");
   }, []);
 
   const handleMouseEnter = () => {
@@ -58,8 +58,8 @@ export default function Projects({ projects }) {
 
   const projectStyles = [
     { zIndex: "z-30", bgClass: "bg-iphone" },
-    { zIndex: "z-20", bgClass: "bg-brainwave" },
-    { zIndex: "z-10", bgClass: "bg-arlen" },
+    { zIndex: "z-20", bgClass: "bg-arlen" },
+    { zIndex: "z-10", bgClass: "bg-brainwave" },
   ];
 
   return (
@@ -74,14 +74,28 @@ export default function Projects({ projects }) {
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {[1, 2, 3].map((_, index) => (
-                <div key={index} className="lg:w-44 lg:h-24 xl:w-56 xl:h-32 bg-arlen relative">
-                  <Image
-                    src={projects[i].images[index]}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    alt="Description of the image"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
+                <div
+                  key={index}
+                  className="lg:w-44 lg:h-24 xl:w-56 xl:h-32 bg-arlen relative"
+                >
+                  {index === 0 || index === 2 ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                      src={projects[i].video[index === 0 ? 0 : 1]}
+                    />
+                  ) : (
+                    <Image
+                      src={projects[0].images[index]}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      alt="Description of the image"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -99,12 +113,15 @@ export default function Projects({ projects }) {
                 onMouseLeave={handleMouseLeave}
                 className={`${projectStyles[index].bgClass} w-full h-[100vh] absolute top-0 left-0 flex justify-center items-center ${projectStyles[index].zIndex}`}
               >
-                <video className="w-3/5" autoPlay loop muted playsInline>
-                  <source src={project.video} type="video/mp4" />
-                  <source src={project.video} type="video/webm" />
-                  <source src={project.video} type="video/ogg" />
-                  Your browser does not support the video tag.
-                </video>
+                <div className="relative w-2/4 h-2/4 overflow-hidden">
+                  <Image
+                    src={project.src[index]}
+                    alt="Description of the image"
+                    sizes="50vw"
+                    className="w-full h-full object-cover"
+                    fill
+                  />
+                </div>
               </TransitionLink>
             ))}
           </div>

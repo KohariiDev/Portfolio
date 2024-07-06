@@ -82,7 +82,7 @@ const HorizontalScroll = ({ project }) => {
         <section className="panel">
           <div className="w-full h-full relative">
             <video
-              src="/images/project-one/iphonevideo.mp4"
+              src={project.projectsPageData.panelThree.image}
               loop
               autoPlay
               muted

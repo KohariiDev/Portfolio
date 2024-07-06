@@ -20,7 +20,7 @@ module.exports = {
         "secondary-color": "#ef4444",
         "projects-color": "#CCCCCC",
         "iphone" : "#041319",
-        "brainwave" : "#471859",
+        "brainwave" : "#171b20",
         "arlen" : "#e1e3e7",
       },
 

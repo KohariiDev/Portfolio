@@ -19,7 +19,7 @@ const ProjectPage = ({ params }) => {
     notFound();
   }
 
-  const firstImage = project.src[3];
+  const firstImage = project.images[0];
 
   return (
     <>
