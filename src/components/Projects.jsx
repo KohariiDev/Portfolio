@@ -18,16 +18,16 @@ import CustomCursor from "./ui/CustomCursor";
 
 // have to import videos directly here because Vercel can't recognize the path
 // Iphone Project Videos
-import iphoneVideo from "../../public/videos/Iphone/Iphone-video.mp4";
-import iphonePhoneVideo from "../../public/videos/Iphone/Iphone-phone-video.mp4";
+import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
+import iphonePhoneVideo from "../../public/videos/iphone/iphone-phone-video.mp4";
 
 // Arlen Project Videos
-import arlenVideo from "../../public/videos/Arlen/Arlen-video.mp4";
-import arlenPhoneVideo from "../../public/videos/Arlen/Arlen-phone-video.mp4";
+import arlenVideo from "../../public/videos/arlen/arlen-video.mp4";
+import arlenPhoneVideo from "../../public/videos/arlen/arlen-phone-video.mp4";
 
 // Podcastr Project Videos
-import podcastrVideo from "../../public/videos/Podcastr/Podcastr-video.mp4";
-import podcastrPhoneVideo from "../../public/videos/Podcastr/Podcastr-phone-video.mp4";
+import podcastrVideo from "../../public/videos/podcastr/podcastr-video.mp4";
+import podcastrPhoneVideo from "../../public/videos/podcastr/podcastr-phone-video.mp4";
 
 const videoSources = {
   Iphone: [iphoneVideo, iphonePhoneVideo],

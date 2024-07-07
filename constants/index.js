@@ -2,9 +2,6 @@ import Picture1 from "../public/images/hero-image.webp";
 import Picture2 from "../public/images/desktop.png";
 import Picture3 from "../public/images/hero-image.webp";
 
-import iphoneVideo from "../public/images/project-one/iphone-video.mp4";
-import iphonePhoneVideo from "../public/images/project-one/iphone-phone-video.mp4";
-
 import iphone from "../public/images/project-one/iphone.webp";
 import iphonePhone from "../public/images/project-one/iphone-phone.webp";
 
