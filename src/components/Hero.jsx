@@ -108,6 +108,7 @@ const Hero = ({ socials, hero }) => {
             phrase={para}
             delay={3500}
             paragraphClass="text-lg opacity-85"
+            y={400}
           />
         </div>
 

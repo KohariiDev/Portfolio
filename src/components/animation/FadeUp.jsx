@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useMemo } from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { useInViewAnimation } from "../../hooks/useInViewAnimation";
 
-const slideUp = (delay) => ({
+const slideUp = (delay, y) => ({
   open: (index) => ({
     y: 0,
     rotate: 0,
@@ -13,10 +13,10 @@ const slideUp = (delay) => ({
       ease: [0.25, 0.1, 0.25, 1],
     },
   }),
-  closed: { y: 250, opacity: 0, rotate: 20 },
+  closed: { y: y, opacity: 0, rotate: 20 },
 });
 
-const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
+const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight, y = 150 }) => {
   const description = useRef(null);
   const isInView = useInViewAnimation(description);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -27,7 +27,7 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight }) => {
     }
   }, [isInView, hasAnimated]);
 
-  const animationVariants = useMemo(() => slideUp(delay), [delay]);
+  const animationVariants = useMemo(() => slideUp(delay, y), [delay]);
   const words = useMemo(() => phrase.split(" "), [phrase]);
 
   return (

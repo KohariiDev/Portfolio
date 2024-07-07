@@ -8,7 +8,7 @@ import iphonePhone from "../public/images/project-one/iphone-phone.webp";
 export const projects = [
   {
     number: "01",
-    title: "Iphone 3D",
+    title: "Iphone",
     src: [Picture2, Picture1, Picture1, Picture1],
     images: [iphonePhone, iphonePhone, iphonePhone],
     projectsPageData: {
@@ -42,7 +42,7 @@ export const projects = [
 
   {
     number: "02",
-    title: "Brainwave AR",
+    title: "Arlen",
     src: [Picture1, Picture1, Picture1, Picture1],
     images: [Picture1, Picture2, Picture3],
     projectsPageData: {
@@ -76,7 +76,7 @@ export const projects = [
 
   {
     number: "03",
-    title: "Project Three",
+    title: "Podcastr",
     src: [Picture1, Picture1, Picture1, Picture1],
     images: [Picture1, Picture2, Picture3],
     projectsPageData: {
