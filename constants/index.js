@@ -22,7 +22,7 @@ export const projects = [
         image: iphonePhone,
       },
       panelThree: {
-        image: iphoneVideo,
+        image: iphonePhone,
       },
       panelFour: {
         descriptionOne:
