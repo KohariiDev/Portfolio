@@ -22,8 +22,8 @@ import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
 import iphonePhoneVideo from "../../public/videos/iphone/iphone-phone-video.mp4";
 
 // Arlen Project Videos
-import arlenVideo from "../../public/videos/arlen/arlen-video.mp4";
-import arlenPhoneVideo from "../../public/videos/arlen/arlen-phone-video.mp4";
+import arlenVideo from "@/../public/videos/arlen/arlen-video.mp4";
+import arlenPhoneVideo from "@/../public/videos/arlen/arlen-phone-video.mp4";
 
 // Podcastr Project Videos
 import podcastrVideo from "../../public/videos/podcastr/podcastr-video.mp4";
