@@ -43,7 +43,7 @@ export default function Index() {
             isActive={selectedLink.isActive}
           />
         </div>
-      </m.div>{" "}
+      </m.div>
     </LazyMotion>
   );
 }

@@ -1,5 +1,8 @@
 export const serviceTextData = {
   title: "about",
+  intro: "Inspired by Passion, Guided by Expertise.",
+  description:
+    "With over two years of hands-on experience in the dynamic field of front-end development, I am driven by a passion for creating visually stunning and highly functional web interfaces. My journey began with a curiosity for coding and design, which has evolved into a deep-seated commitment to excellence in every project I undertake. Throughout my career, I have honed my skills in HTML, CSS, JavaScript, and various frameworks, ensuring that each project I develop is not only aesthetically pleasing but also user-friendly and responsive.",
 };
 
 export const servicesData = [

@@ -14,13 +14,8 @@ const SlidingImages = dynamic(() => import("../components/SlidingImages"), {
   loading: () => <p>Loading...</p>,
 });
 
-const Footer = dynamic(() => import("../components/Footer"), {
-  loading: () => <p>Loading...</p>,
-});
-
 import {
   heroData,
-  footerData,
   projectsData,
   servicesData,
   serviceTextData,
@@ -46,9 +41,6 @@ export default function Home() {
       </section>
       <section id="sliding-images">
         <SlidingImages />
-      </section>
-      <section id="footer">
-        <Footer footer={footerData} />
       </section>
     </main>
   );

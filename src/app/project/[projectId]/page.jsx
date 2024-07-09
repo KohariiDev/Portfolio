@@ -27,8 +27,10 @@ const ProjectPage = ({ params }) => {
         <ContainerScroll titleComponent={project.title}>
           <Image
             src={firstImage}
-            alt={project.alt}
-            className="h-screen md:h-full rounded-lg"
+            alt="an image of the project"
+            className="h-screen rounded-lg md:h-full"
+            priority
+            
           />
         </ContainerScroll>
 

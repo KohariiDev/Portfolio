@@ -1,9 +1,17 @@
 import "./globals.css";
+import dynamic from "next/dynamic";
+
 import Header from "../components/header";
 import { NavProvider } from "../context/NavContext";
 import { Oswald } from "next/font/google";
 
+import { footerData } from "@/data";
+
 import { LenisProvider } from "../context/LenisProvider";
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -24,6 +32,7 @@ export default function RootLayout({ children }) {
             <NavProvider>
               <Header />
               {children}
+              <Footer footer={footerData} />
             </NavProvider>
           </LenisProvider>
         </div>

@@ -5,6 +5,8 @@ import { blur, translate } from "../../../animation/nav/anim";
 import useScrollToSection from "../../../../hooks/useScrollToSection";
 import { useNav } from "../../../../context/NavContext";
 
+import getChars from "@/utils/getChars";
+
 import loadFeatures from "../../../../utils/framerFeatures/loadFeatures";
 
 export default function Body({ links, selectedLink, setSelectedLink }) {
@@ -28,25 +30,6 @@ export default function Body({ links, selectedLink, setSelectedLink }) {
         setIsNavActive(false);
       });
     }
-  };
-
-  const getChars = (word) => {
-    let chars = [];
-    word.split("").forEach((char, i) => {
-      chars.push(
-        <m.span
-          custom={[i * 0.02, (word.length - i) * 0.01]}
-          variants={translate}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-          key={char + i}
-        >
-          {char}
-        </m.span>
-      );
-    });
-    return chars;
   };
 
   return (
@@ -75,7 +58,7 @@ export default function Body({ links, selectedLink, setSelectedLink }) {
                   onClick={(e) => handleNavigation(e, href)}
                   className="cursor-pointer"
                 >
-                  {getChars(title)}
+                  {getChars(title, translate)}
                 </m.p>
               </Link>
             </m.div>
