@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { slugify } from "../../../utils/slugify";
 import PageVideo from "../../../components/PageVideo";
 import HorizontalScroll from "../../../components/ui/HorizontalScroll";
+import ProjectVideo from "../../../components/ProjectVideo";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -22,15 +23,7 @@ const ProjectPage = ({ params }) => {
     <>
       <section className="bg-hero-color">
         <PageVideo>
-          <video
-            src={project.video}
-            loop
-            autoPlay
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-            style={{ objectFit: "contain" }}
-          />
+          <ProjectVideo />
         </PageVideo>
 
         <HorizontalScroll project={project} />
