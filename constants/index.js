@@ -12,7 +12,7 @@ import iphoneVideo from "../public/videos/iphone/page-video.mp4";
 // Arlen images
 import arlenHero from "../public/images/project-two/arlen-hero.webp";
 import arlenServices from "../public/images/project-two/arlen-services.webp";
-import arlenTablet from "../public/images/project-two/arlen-tablet.webp";
+import arlenMobiles from "../public/images/project-two/arlen-mobiles.webp";
 // Arlen video
 import arlenVideo from "../public/videos/arlen/page-video.mp4";
 
@@ -20,8 +20,7 @@ export const projects = [
   {
     number: "01",
     title: "Iphone",
-    src: [iphoneHero, Picture1, Picture1, Picture1],
-    images: [iphoneHero, iphonePhone, iphonePhone],
+    images: [iphoneHero, iphonePhone, iphone3D],
     video: iphoneVideo,
     url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
@@ -50,8 +49,7 @@ export const projects = [
   {
     number: "02",
     title: "Arlen",
-    src: [arlenHero, Picture1, Picture1, Picture1],
-    images: [arlenTablet, Picture2, Picture3],
+    images: [arlenServices, arlenMobiles, arlenHero],
     video: arlenVideo,
     url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
@@ -80,7 +78,6 @@ export const projects = [
   {
     number: "03",
     title: "Podcastr",
-    src: [Picture1, Picture1, Picture1, Picture1],
     images: [Picture1, Picture2, Picture3],
     video: iphoneVideo,
     url: "https://arlen-alpha.vercel.app/",

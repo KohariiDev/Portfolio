@@ -15,14 +15,7 @@
   padding: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
 /* Page transitions */
-
 .page-transition {
   opacity: 0;
   background-color: #f5efef;
@@ -48,21 +41,8 @@ picture {
   display: block;
 }
 
-/* Title font */
-.oswald-text {
-  font-family: "Oswald", sans-serif;
-}
-
-/* Ensure buttons have consistent appearance */
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
 
 /* Custom styles */
-
 .project-container {
   position: relative !important;
 }

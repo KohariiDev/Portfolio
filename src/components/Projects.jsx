@@ -84,7 +84,7 @@ export default function Projects({ projects }) {
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {/* Main Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
                 <video
                   autoPlay
                   loop
@@ -95,17 +95,17 @@ export default function Projects({ projects }) {
                 />
               </div>
               {/* Image */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
                 <Image
                   src={project.images[0]}
                   fill
                   style={{ objectFit: "cover" }}
                   alt="Description of the image"
-                  sizes="50vw,"
+                  sizes="55vw,"
                 />
               </div>
               {/* Phone Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
                 <video
                   autoPlay
                   loop
@@ -130,12 +130,12 @@ export default function Projects({ projects }) {
                 onMouseLeave={() => handleMouseLeave(cursorRef)}
                 className={`${projectStyles[index].bgClass} absolute left-0 top-0 flex h-[100vh] w-full items-center justify-center ${projectStyles[index].zIndex}`}
               >
-                <div className="relative h-2/4 w-2/4 overflow-hidden">
+                <div className="relative h-full w-full overflow-hidden md:h-2/4 md:w-2/4">
                   <Image
                     src={project.src[index]}
                     alt="Description of the image"
-                    sizes="50vw"
-                    className="h-full w-full object-cover"
+                    sizes="55vw"
+                    className="h-full w-full object-contain md:object-cover"
                     fill
                   />
                 </div>

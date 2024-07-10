@@ -1,42 +1,41 @@
-// Sliding images
-import Picture1 from "../../public/images/hero-image.webp";
-import Picture2 from "../../public/images/desktop.png";
-import Picture3 from "../../public/images/hero-image.webp";
+import iphoneMini from "../../public/images/project-one/iphone.webp";
+import arlenMini from "../../public/images/project-two/arlen-mini.webp";
+import podcastrMini from "../../public/images/project-three/podcastr.webp";
 
 export const slider1 = [
   {
     color: "#e5e5e5",
-    src: Picture1,
+    src: podcastrMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture2,
+    src: arlenMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture3,
+    src: iphoneMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture1,
+    src: arlenMini,
   },
 ];
 
 export const slider2 = [
   {
     color: "#e5e5e5",
-    src: Picture1,
+    src: podcastrMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture2,
+    src: iphoneMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture3,
+    src: podcastrMini,
   },
   {
     color: "#e5e5e5",
-    src: Picture3,
+    src: arlenMini,
   },
 ];

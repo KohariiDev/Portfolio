@@ -21,7 +21,7 @@ export default function TextPath({ textPath }) {
   }, [scrollYProgress]);
 
   return (
-    <div id="textPath" ref={container} className="bg-hero-color">
+    <div id="textPath" ref={container} className="mt-24 bg-hero-color md:mt-0">
       <svg className="mb-0 w-full" viewBox="0 0 250 90">
         <path
           fill="none"
@@ -29,7 +29,7 @@ export default function TextPath({ textPath }) {
           d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
         />
         <text className="text-[6px] uppercase" style={{ fill: "red" }}>
-          {[...Array(8)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <textPath
               key={i}
               ref={(ref) => (paths.current[i] = ref)}
@@ -51,7 +51,7 @@ const Work = ({ scrollProgress, text2 }) => {
   return (
     <div
       id="work"
-      className="bg-project-color h-[260px] overflow-hidden 2k:h-[300px]"
+      className="bg-project-color mt-72 h-[260px] overflow-hidden md:mt-0 2k:h-[300px]"
     >
       <motion.div
         style={{ y }}

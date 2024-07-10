@@ -66,7 +66,7 @@ export default function Services({ services, serviceText }) {
             <motion.h1
               ref={textRef}
               initial={{ fontWeight: 100 }}
-              className="text-xl font-thin uppercase tracking-wide text-secondary-color underline underline-offset-8 opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
+              className="text-sm font-thin uppercase tracking-wide text-secondary-color underline underline-offset-8 opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
             >
               {intro.split("").map((char, index) => (
                 <motion.span key={index}>{char}</motion.span>

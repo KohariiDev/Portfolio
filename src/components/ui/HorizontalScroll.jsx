@@ -12,41 +12,56 @@ import FourthPanel from "./horizontal-components/FourthPanel";
 import BackButton from "./horizontal-components/BackButton";
 import VisitButton from "./horizontal-components/VisitButton";
 
+import useWindowSize from "@/hooks/useWindowSize";
+
+import PageMobile from "../PageMobile";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalScroll = ({ project }) => {
+  const { width } = useWindowSize();
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let sections = gsap.utils.toArray(".panel");
-    let totalWidth = sections.length * window.innerWidth;
+    if (width >= 768) {
+      let sections = gsap.utils.toArray(".panel");
+      let totalWidth = sections.length * window.innerWidth;
 
-    let scrollTween = gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        pin: true,
-        scrub: 0.1,
-        end: `+=${totalWidth}`,
-      },
-    });
+      let scrollTween = gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: true,
+          scrub: 0.1,
+          end: `+=${totalWidth}`,
+        },
+      });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    }
+  }, [width]);
+
+  const isMobile = width < 768;
 
   return (
     <div ref={containerRef} style={{ overflow: "hidden" }} className="relative">
-      <BackButton />
-      <VisitButton project={project}/>
-      <div className="horizontal-container mb-[30vh] flex gap-28 bg-hero-color tracking-wide lg:mb-[90vh] lg:gap-40 2k:mb-[100vh]">
-        <FirstPanel project={project} />
-        <FourthPanel project={project} />
-        <SecondPanel project={project} />
-        <ThirdPanel project={project} />
-      </div>
+      {!isMobile ? (
+        <>
+          <BackButton />
+          <VisitButton project={project} />
+          <div className="horizontal-container mb-[30vh] flex gap-28 bg-hero-color tracking-wide lg:mb-[90vh] lg:gap-40 2k:mb-[100vh]">
+            <FirstPanel project={project} />
+            <FourthPanel project={project} />
+            <SecondPanel project={project} />
+            <ThirdPanel project={project} />
+          </div>
+        </>
+      ) : (
+        <PageMobile project={project} />
+      )}
     </div>
   );
 };

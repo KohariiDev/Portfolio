@@ -82,11 +82,11 @@ const Hero = ({ socials, hero }) => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
-          className="ml-auto mr-auto mt-16 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
+          className="ml-auto mr-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
         >
           <Rounded
             backgroundColor="#ef4444"
-            className="flex h-[130px] w-[130px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 2k:h-[200px] 2k:w-[200px]"
+            className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
           >
             <button
               onClick={() =>
@@ -96,14 +96,14 @@ const Hero = ({ socials, hero }) => {
                   "Please enter your message here",
                 )
               }
-              className="z-50 uppercase"
+              className="z-50 text-sm uppercase md:text-base"
             >
               {buttonAction}
             </button>
           </Rounded>
         </m.div>
 
-        <div className="ml-auto mr-auto max-w-xl text-center md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1300px]">
+        <div className="ml-auto mr-auto mt-10 max-w-xl px-4 text-center md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1300px]">
           <FadeUp
             phrase={para}
             delay={3500}
