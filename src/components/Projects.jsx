@@ -16,14 +16,14 @@ import TransitionLink from "../utils/TransitionLink";
 import { slugify } from "../utils/slugify";
 import CustomCursor from "./ui/CustomCursor";
 
-// have to import videos directly here because Vercel can't recognize the path
+// import videos directly here because Vercel can't recognize the path
 // Iphone Project Videos
 import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
 import iphonePhoneVideo from "../../public/videos/iphone/iphone-phone-video.mp4";
 
 // Arlen Project Videos
-import arlenVideo from "@/../public/videos/arlen/arlen-video.mp4";
-import arlenPhoneVideo from "@/../public/videos/arlen/arlen-phone-video.mp4";
+import arlenVideo from "../../public/videos/arlen/arlen-video.mp4";
+import arlenPhoneVideo from "../../public/videos/arlen/arlen-phone-video.mp4";
 
 // Podcastr Project Videos
 import podcastrVideo from "../../public/videos/podcastr/podcastr-video.mp4";
@@ -80,11 +80,11 @@ export default function Projects({ projects }) {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex`}
+              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex 2k:right-32`}
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {/* Main Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
                 <video
                   autoPlay
                   loop
@@ -95,7 +95,7 @@ export default function Projects({ projects }) {
                 />
               </div>
               {/* Image */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
                 <Image
                   src={project.images[0]}
                   fill
@@ -105,7 +105,7 @@ export default function Projects({ projects }) {
                 />
               </div>
               {/* Phone Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:w-80 2k:h-52">
                 <video
                   autoPlay
                   loop

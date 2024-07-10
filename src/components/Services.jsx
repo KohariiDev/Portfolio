@@ -10,8 +10,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export default function Services({ services, serviceText }) {
   const { title, intro, description } = serviceText;
 
-  const text = "Inspired by Passion, Guided by Expertise.";
-
   const titleRef = useRef(null);
   const isInView = useInViewAnimation(titleRef, true);
   const container = useRef(null);
@@ -56,7 +54,7 @@ export default function Services({ services, serviceText }) {
         <div className="relative ml-auto mr-auto flex flex-col">
           <motion.h1
             ref={titleRef}
-            className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl"
+            className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl"
           >
             {isInView && <FadeUpTitle word={title} />}
           </motion.h1>
@@ -68,7 +66,7 @@ export default function Services({ services, serviceText }) {
             <motion.h1
               ref={textRef}
               initial={{ fontWeight: 100 }}
-              className="text-xl font-thin uppercase tracking-wide text-secondary-color underline underline-offset-8 opacity-85 md:text-2xl lg:text-2xl"
+              className="text-xl font-thin uppercase tracking-wide text-secondary-color underline underline-offset-8 opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
             >
               {intro.split("").map((char, index) => (
                 <motion.span key={index}>{char}</motion.span>
@@ -76,7 +74,7 @@ export default function Services({ services, serviceText }) {
             </motion.h1>
           </div>
           <div className="flex-1">
-            <span className="ml-auto w-3/4 text-justify tracking-wider text-slate-800">
+            <span className="ml-auto w-3/4 text-justify tracking-wider text-slate-800 2k:text-3xl">
               <FadeUp delay={700} phrase={description} />
             </span>
           </div>
@@ -86,17 +84,17 @@ export default function Services({ services, serviceText }) {
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-between border-t border-gray-300 py-16 text-slate-800 md:flex-row"
+              className="flex flex-col items-center justify-between border-t border-gray-300 py-16 text-slate-800 md:flex-row 2k:justify-around"
             >
               <div className="w-full md:w-1/2">
-                <h2 className="lg:mg-0 mb-5 text-3xl uppercase xl:text-5xl">
+                <h2 className="lg:mg-0 mb-5 text-3xl uppercase xl:text-5xl 2k:text-8xl">
                   {title}{" "}
                   <span className="text-lg text-secondary-color">
                     ({number})
                   </span>
                 </h2>
               </div>
-              <div className="max-w-lg text-xs text-slate-600 md:w-1/2 lg:w-2/5 xl:w-1/3 xl:text-base">
+              <div className="max-w-lg text-xs text-slate-600 md:w-1/2 lg:w-2/5 xl:w-1/3 xl:text-base 2k:max-w-[800px] 2k:text-3xl">
                 <FadeUp phrase={description} />
               </div>
             </div>

@@ -22,6 +22,8 @@ export const projects = [
     title: "Iphone",
     src: [iphoneHero, Picture1, Picture1, Picture1],
     images: [iphoneHero, iphonePhone, iphonePhone],
+    video: iphoneVideo,
+    url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "3D iPhone Showcase",
@@ -33,7 +35,7 @@ export const projects = [
         image: iphoneHero,
       },
       panelThree: {
-        image: iphoneVideo,
+        image: arlenHero,
       },
       panelFour: {
         descriptionOne:
@@ -50,6 +52,8 @@ export const projects = [
     title: "Arlen",
     src: [arlenHero, Picture1, Picture1, Picture1],
     images: [arlenTablet, Picture2, Picture3],
+    video: arlenVideo,
+    url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "Arlen Modeling Agency",
@@ -78,6 +82,8 @@ export const projects = [
     title: "Podcastr",
     src: [Picture1, Picture1, Picture1, Picture1],
     images: [Picture1, Picture2, Picture3],
+    video: iphoneVideo,
+    url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "Project Three",

@@ -34,11 +34,11 @@ export default function Footer({ footer }) {
       ref={container}
       className="relative flex flex-col items-center justify-center overflow-hidden bg-[#141516] text-white"
     >
-      <div className="w-full max-w-[1800px] bg-[#141516] pt-[200px]">
+      <div className="w-full max-w-[1800px] bg-[#141516] pt-[200px] 2k:max-w-[2200px]">
         <Image
           src={footer.textImage}
           className="h-full w-full"
-          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="55vw"
           alt="Footer Text"
         />
         <div className="relative border-b border-gray-500 pb-[100px] md:mx-[200px]">
@@ -63,7 +63,7 @@ export default function Footer({ footer }) {
                           e.preventDefault();
                           scrollToSection(link.href.slice(1));
                         }}
-                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color"
+                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color 2k:max-w-[200px] 2k:text-2xl"
                       >
                         <FadeUp phrase={link.title} />
                       </Link>
@@ -110,12 +110,12 @@ export default function Footer({ footer }) {
                   </span>
                   {footer.socials.map((social, index) => (
                     <GsapMagnetic key={index}>
-                      <a
+                      <Link
                         href={social.href}
-                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color"
+                        className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color 2k:max-w-[200px] 2k:text-2xl"
                       >
                         <FadeUp phrase={social.title} />
-                      </a>
+                      </Link>
                     </GsapMagnetic>
                   ))}
                 </li>
