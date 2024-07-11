@@ -25,7 +25,7 @@ export const projects = [
     title: "Iphone",
     images: [iphoneHero, iphonePhone, iphone3D],
     video: iphoneVideo,
-    url: "https://arlen-alpha.vercel.app/",
+    url: "https://iphone-3-d-eight.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "3D iPhone Showcase",
