@@ -7,12 +7,12 @@ export const links = [
   {
     title: "About",
     href: "#about",
-    src: "hero-image.webp",
+    src: "profile.webp",
   },
   {
     title: "Projects",
     href: "#projects",
-    src: "hero-image.webp",
+    src: "project-image.webp",
   },
   {
     title: "Contact",

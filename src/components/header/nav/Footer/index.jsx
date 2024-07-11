@@ -16,7 +16,7 @@ export default function Footer() {
             animate="enter"
             exit="exit"
           >
-            <span>Made by:</span>Studio Lumio
+            <span>Developer: </span>Norbert Kohari
           </m.li>
         </ul>
         <ul>
@@ -27,7 +27,7 @@ export default function Footer() {
             animate="enter"
             exit="exit"
           >
-            <span>Typography:</span> Google Fonts
+            <span>Email:</span> kohari.dev@gmail.com
           </m.li>
         </ul>
         <ul>
@@ -38,7 +38,7 @@ export default function Footer() {
             animate="enter"
             exit="exit"
           >
-            <span>Images:</span> Freepik, Envato
+            <span>Location:</span> Worldwide
           </m.li>
         </ul>
         <ul>

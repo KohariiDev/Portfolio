@@ -5,13 +5,11 @@ import Header from "../components/header";
 import { NavProvider } from "../context/NavContext";
 import { Oswald } from "next/font/google";
 
-import { footerData } from "@/data";
-
 import { LenisProvider } from "../context/LenisProvider";
+import { Suspense } from "react";
 
-const Footer = dynamic(() => import("../components/Footer"), {
-  loading: () => <p>Loading...</p>,
-});
+const Footer = dynamic(() => import("../components/Footer"));
+import { footerData } from "@/data";
 
 export const metadata = {
   title: "Norbert Kohari",
@@ -47,7 +45,9 @@ export default function RootLayout({ children }) {
             <NavProvider>
               <Header />
               {children}
-              <Footer footer={footerData} />
+              <Suspense>
+                <Footer footer={footerData} />
+              </Suspense>
             </NavProvider>
           </LenisProvider>
         </div>

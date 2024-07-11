@@ -1,18 +1,15 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 // Components
 import Hero from "../components/Hero";
-import TextPath from "../components/TextPath";
-import Projects from "../components/Projects";
 import PreLoader from "../components/Preloader";
 
-const Services = dynamic(() => import("../components/Services"), {
-  loading: () => <p>Loading...</p>,
-});
+const TextPath = dynamic(() => import("../components/TextPath"));
+const Projects = dynamic(() => import("../components/Projects"));
+const Services = dynamic(() => import("../components/Services"));
 
-const SlidingImages = dynamic(() => import("../components/SlidingImages"), {
-  loading: () => <p>Loading...</p>,
-});
+const SlidingImages = dynamic(() => import("../components/SlidingImages"));
 
 import {
   heroData,
@@ -27,21 +24,19 @@ export default function Home() {
   return (
     <main>
       <PreLoader />
-      <section id="home">
-        <Hero socials={socialsData} hero={heroData} />
-      </section>
-      <section id="textpath">
+      <Hero socials={socialsData} hero={heroData} />
+      <Suspense>
         <TextPath textPath={textPathData} />
-      </section>
-      <section id="projects">
+      </Suspense>
+      <Suspense>
         <Projects projects={projectsData} />
-      </section>
-      <section id="about">
+      </Suspense>
+      <Suspense>
         <Services services={servicesData} serviceText={serviceTextData} />
-      </section>
-      <section id="sliding-images">
+      </Suspense>
+      <Suspense>
         <SlidingImages />
-      </section>
+      </Suspense>
     </main>
   );
 }

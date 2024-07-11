@@ -1,7 +1,3 @@
-import Picture1 from "../public/images/hero-image.webp";
-import Picture2 from "../public/images/desktop.png";
-import Picture3 from "../public/images/hero-image.webp";
-
 // Iphone images
 import iphoneHero from "../public/images/project-one/iphone-hero.webp";
 import iphone3D from "../public/images/project-one/iphone-3d.webp";
@@ -15,6 +11,13 @@ import arlenServices from "../public/images/project-two/arlen-services.webp";
 import arlenMobiles from "../public/images/project-two/arlen-mobiles.webp";
 // Arlen video
 import arlenVideo from "../public/videos/arlen/page-video.mp4";
+
+// Podcastr images
+import podcastrHero from "../public/images/project-three/podcastr.webp";
+import podcastrServices from "../public/images/project-three/podcastr-services.webp";
+import podcastrMobiles from "../public/images/project-three/podcastr-mobiles.webp";
+// Podcastr video
+import podcastrVideo from "../public/videos/podcastr/page-video.mp4";
 
 export const projects = [
   {
@@ -78,21 +81,21 @@ export const projects = [
   {
     number: "03",
     title: "Podcastr",
-    images: [Picture1, Picture2, Picture3],
-    video: iphoneVideo,
+    images: [podcastrHero, podcastrServices, podcastrMobiles],
+    video: podcastrVideo,
     url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "Project Three",
         description:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
-        image: Picture1,
+        image: podcastrHero,
       },
       panelTwo: {
-        image: Picture1,
+        image: podcastrServices,
       },
       panelThree: {
-        image: Picture1,
+        image: podcastrVideo,
       },
       panelFour: {
         descriptionOne:
@@ -105,7 +108,7 @@ export const projects = [
         title: "Project One",
         description:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
-        image: Picture1,
+        image: podcastrServices,
       },
     },
   },

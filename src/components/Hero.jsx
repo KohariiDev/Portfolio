@@ -30,7 +30,7 @@ const Hero = ({ socials, hero }) => {
   return (
     <LazyMotion features={loadFeatures}>
       <section
-        id="hero"
+        id="home"
         className="relative flex min-h-screen flex-col overflow-hidden bg-hero-color px-1 pt-36 text-slate-900 md:px-8 xl:px-20"
       >
         <m.h1 className="absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-tight md:top-20 md:text-nowrap md:text-left md:text-[7rem] lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl 2k:text-20xl">

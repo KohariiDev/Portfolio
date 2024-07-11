@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
@@ -15,6 +14,8 @@ import {
 import TransitionLink from "../utils/TransitionLink";
 import { slugify } from "../utils/slugify";
 import CustomCursor from "./ui/CustomCursor";
+import VideoInView from "../hooks/useVideoInView";
+import Placeholder from "./Placeholder";
 
 // import videos directly here because Vercel can't recognize the path
 // Iphone Project Videos
@@ -75,7 +76,7 @@ export default function Projects({ projects }) {
   return (
     <>
       <CustomCursor ref={cursorRef} />
-      <section className="mb-0">
+      <section id="projects" className="mb-0">
         <div ref={containerRef} className="relative h-[600vh]">
           {projects.map((project, i) => (
             <div
@@ -84,16 +85,15 @@ export default function Projects({ projects }) {
               style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
             >
               {/* Main Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover"
+              {videoSources[project.title][0] ? (
+                <VideoInView
                   src={videoSources[project.title][0]}
+                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80"
                 />
-              </div>
+              ) : (
+                <Placeholder />
+              )}
+
               {/* Image */}
               <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
                 <Image
@@ -101,20 +101,18 @@ export default function Projects({ projects }) {
                   fill
                   style={{ objectFit: "cover" }}
                   alt="Description of the image"
-                  sizes="55vw,"
+                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               {/* Phone Video */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover"
+              {videoSources[project.title][1] ? (
+                <VideoInView
                   src={videoSources[project.title][1]}
+                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80"
                 />
-              </div>
+              ) : (
+                <Placeholder />
+              )}
             </div>
           ))}
           <div
@@ -134,7 +132,7 @@ export default function Projects({ projects }) {
                   <Image
                     src={project.src[index]}
                     alt="Description of the image"
-                    sizes="55vw"
+                    sizes="100vw"
                     className="h-full w-full object-contain md:object-cover"
                     fill
                   />

@@ -19,7 +19,7 @@ const SecondPanel = ({ project }) => {
           src={project.projectsPageData.panelTwo.image}
           alt="hero"
           fill
-          sizes="55vw"
+          sizes="100vw"
           className="h-1/2 w-1/2 object-contain"
         />
       </div>

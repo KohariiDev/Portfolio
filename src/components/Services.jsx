@@ -47,7 +47,7 @@ export default function Services({ services, serviceText }) {
   return (
     <section
       ref={container}
-      id="service"
+      id="about"
       className="mt-[-500px] overflow-hidden bg-hero-color px-4 pb-8 md:px-16 md:pb-16 xl:px-24"
     >
       <div className="mb-28 flex flex-col justify-between md:flex-row">
