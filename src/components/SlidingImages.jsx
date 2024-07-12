@@ -1,17 +1,21 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 
 import { slider1, slider2 } from "../data/sliderData";
 
-export default function SlidingImages() {
+function SlidingImages() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
+
+  useEffect(() => {
+    console.log("SlidingImages component re-rendered");
+  })
 
   const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
@@ -81,3 +85,5 @@ export default function SlidingImages() {
     </div>
   );
 }
+
+export default React.memo(SlidingImages);

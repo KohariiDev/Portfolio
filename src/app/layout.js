@@ -1,14 +1,13 @@
 import "./globals.css";
-import dynamic from "next/dynamic";
 
 import Header from "../components/header";
-import { NavProvider } from "../context/NavContext";
+import { NavProvider } from "@/context/NavContext";
 import { Oswald } from "next/font/google";
 
-import { LenisProvider } from "../context/LenisProvider";
-import { Suspense } from "react";
+import { LenisProvider } from "@/context/LenisProvider";
+import LazyComponent from "@/components/LazyComponent";
 
-const Footer = dynamic(() => import("../components/Footer"));
+import Footer from "@/components/Footer";
 import { footerData } from "@/data";
 
 export const metadata = {
@@ -45,9 +44,7 @@ export default function RootLayout({ children }) {
             <NavProvider>
               <Header />
               {children}
-              <Suspense>
-                <Footer footer={footerData} />
-              </Suspense>
+              <LazyComponent component={Footer} footer={footerData} />
             </NavProvider>
           </LenisProvider>
         </div>

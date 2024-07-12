@@ -10,6 +10,8 @@ import useScrollToSection from "../hooks/useScrollToSection";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import Link from "next/link";
 
+import { handleNavigation } from "@/events/handleNavigation";
+
 import openEmailClient from "../utils/openEmailClient";
 
 export default function Footer({ footer }) {
@@ -60,8 +62,7 @@ export default function Footer({ footer }) {
                         scroll={false}
                         passHref
                         onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection(link.href.slice(1));
+                          handleNavigation(e, link.href, scrollToSection);
                         }}
                         className="max-w-16 cursor-pointer uppercase text-hero-color transition-colors duration-300 ease-in-out hover:text-secondary-color 2k:max-w-[200px] 2k:text-2xl"
                       >

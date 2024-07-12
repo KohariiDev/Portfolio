@@ -1,24 +1,29 @@
+import { useCallback } from "react";
 import { gsap } from "gsap";
 
-const handleMouseEnter = (ref) => {
-  if (ref.current) {
-    ref.current.style.opacity = 0.9;
-    gsap.to(ref.current, {
-      scale: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  }
-};
+function useCursorHandlers(ref) {
+  const handleMouseEnter = useCallback(() => {
+    if (ref.current) {
+      ref.current.style.opacity = 0.9;
+      gsap.to(ref.current, {
+        scale: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
+  }, [ref]);
 
-const handleMouseLeave = (ref) => {
-  if (ref.current) {
-    gsap.to(ref.current, {
-      scale: 0,
-      duration: 0.5,
-      ease: "power2.in",
-    });
-  }
-};
+  const handleMouseLeave = useCallback(() => {
+    if (ref.current) {
+      gsap.to(ref.current, {
+        scale: 0,
+        duration: 0.5,
+        ease: "power2.in",
+      });
+    }
+  }, [ref]);
 
-export { handleMouseEnter, handleMouseLeave };
+  return { handleMouseEnter, handleMouseLeave };
+}
+
+export default useCursorHandlers;

@@ -6,26 +6,19 @@ import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import { LazyMotion, m } from "framer-motion";
-
 import loadFeatures from "../utils/framerFeatures/loadFeatures";
+import handleEmailClick from "../events/handleEmailClick";
+import React, { useEffect, useRef, useMemo } from "react";
 
-import openEmailClient from "../utils/openEmailClient";
+const Hero = React.memo(({ socials, hero }) => {
+  useEffect(() => {
+    console.log("Hero component re-rendered");
+  });
 
-import { useRef } from "react";
+  const socialsArray = useMemo(() => Object.values(socials), [socials]);
+  const { title, para, cta, buttonAction } = hero;
 
-const Hero = ({ socials, hero }) => {
-  const redDotRef = useRef(null);
-  const socialsRef = useRef(null);
-  const currentTimeRef = useRef(null);
-  const ctaRef = useRef(null);
-
-  useInViewAnimation(redDotRef);
-  useInViewAnimation(socialsRef);
-  useInViewAnimation(currentTimeRef);
-  useInViewAnimation(ctaRef);
-
-  const socialsArray = Object.values(socials);
-  const { title, para, cta, buttonAction, link } = hero;
+  const handleClick = handleEmailClick();
 
   return (
     <LazyMotion features={loadFeatures}>
@@ -49,34 +42,30 @@ const Hero = ({ socials, hero }) => {
                 duration: 1,
               },
             }}
-            ref={redDotRef}
             className="ml-auto mr-1 hidden rounded-full bg-secondary-color md:block md:h-[15px] md:w-[15px] lg:mr-2 lg:h-[20px] lg:w-[20px] xl:mr-3 xl:h-[30px] xl:w-[30px]"
           ></m.span>
         </m.h1>
 
         <div className="absolute bottom-5 right-5 ml-auto hidden items-center gap-10 opacity-90 lg:flex">
-          {socialsArray.map((socials, i) => {
-            return (
-              <m.span
-                key={i}
-                ref={socialsRef}
-                initial={{ y: 100 }}
-                animate={{
-                  y: 0,
-                  transition: {
-                    delay: 3 + i * 0.3,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 10,
-                    mass: 1,
-                  },
-                }}
-                className="cursor-pointer fill-slate-600 hover:fill-secondary-color"
-              >
-                <GsapMagnetic>{socials}</GsapMagnetic>
-              </m.span>
-            );
-          })}
+          {socialsArray.map((social, i) => (
+            <m.span
+              key={i}
+              initial={{ y: 100 }}
+              animate={{
+                y: 0,
+                transition: {
+                  delay: 3 + i * 0.3,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  mass: 1,
+                },
+              }}
+              className="cursor-pointer fill-slate-600 hover:fill-secondary-color"
+            >
+              <GsapMagnetic>{social}</GsapMagnetic>
+            </m.span>
+          ))}
         </div>
 
         <m.div
@@ -89,13 +78,7 @@ const Hero = ({ socials, hero }) => {
             className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
           >
             <button
-              onClick={() =>
-                openEmailClient(
-                  "kohari.dev@gmail.com",
-                  "Contact Us",
-                  "Please enter your message here",
-                )
-              }
+              onClick={handleClick}
               className="z-50 text-sm uppercase md:text-base"
             >
               {buttonAction}
@@ -114,7 +97,6 @@ const Hero = ({ socials, hero }) => {
 
         <div className="absolute bottom-5 left-0">
           <m.p
-            ref={currentTimeRef}
             initial={{ y: 100 }}
             animate={{
               y: 0,
@@ -133,7 +115,6 @@ const Hero = ({ socials, hero }) => {
         </div>
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
           <m.p
-            ref={ctaRef}
             initial={{ y: 100 }}
             animate={{
               y: 0,
@@ -153,6 +134,6 @@ const Hero = ({ socials, hero }) => {
       </section>
     </LazyMotion>
   );
-};
+});
 
 export default Hero;

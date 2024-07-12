@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Services({ services, serviceText }) {
+function Services({ services, serviceText }) {
   const { title, intro, description } = serviceText;
 
   const titleRef = useRef(null);
@@ -27,7 +27,7 @@ export default function Services({ services, serviceText }) {
       useTransform(
         scrollYProgress,
         [index / totalChars, (index + 1) / totalChars],
-        [100, 500],
+        [200, 500],
       ),
     );
 
@@ -43,6 +43,10 @@ export default function Services({ services, serviceText }) {
       unsubscribesFontWeight.forEach((unsubscribe) => unsubscribe());
     };
   }, [fontWeightControls]);
+
+  useEffect(() => {
+    console.log("Services component re-rendered");
+  })
 
   return (
     <section
@@ -104,3 +108,5 @@ export default function Services({ services, serviceText }) {
     </section>
   );
 }
+
+export default React.memo(Services);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function TextPath({ textPath }) {
@@ -19,6 +19,10 @@ export default function TextPath({ textPath }) {
       });
     });
   }, [scrollYProgress]);
+
+  useEffect(() => {
+    console.log("TextPath component re-rendered");
+  });
 
   return (
     <div id="textPath" ref={container} className="mt-24 bg-hero-color md:mt-0">
@@ -46,7 +50,10 @@ export default function TextPath({ textPath }) {
   );
 }
 
-const Work = ({ scrollProgress, text2 }) => {
+const Work = React.memo(({ scrollProgress, text2 }) => {
+  useEffect(() => {
+    console.log("Work component re-rendered");
+  });
   const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
   return (
     <div
@@ -65,4 +72,4 @@ const Work = ({ scrollProgress, text2 }) => {
       </motion.div>
     </div>
   );
-};
+});

@@ -37,14 +37,15 @@ export const projects = [
         image: iphoneHero,
       },
       panelThree: {
-        image: arlenHero,
+        description:
+          "One of the main challenges faced in the project was achieving high-resolution and realistic rendering of the iPhone model on various devices. To address this, Three.js was utilized for rendering 3D graphics in the web environment, enabling the detailed and smooth visualization of the iPhone model. Additionally, optimizing the 3D models and textures ensured performance efficiency while maintaining visual fidelity across desktop and mobile platforms.",
       },
       panelFour: {
         descriptionOne:
           "This project involved creating a web-based application that mimics the aesthetics and user experience of the original iPhone launch website. It featured a real-time 3D model of the iPhone, allowing users to explore the device by rotating, zooming, and interacting with its features directly within their web browser.",
 
         descriptionTwo:
-          "One of the main challenges faced in the project was achieving high-resolution and realistic rendering of the iPhone model on various devices. To address this, Three.js was utilized for rendering 3D graphics in the web environment, enabling the detailed and smooth visualization of the iPhone model. Additionally, optimizing the 3D models and textures ensured performance efficiency while maintaining visual fidelity across desktop and mobile platforms.",
+          "To achieve high-resolution and realistic rendering of the iPhone model, Three.js was utilized. Building on the core capabilities of Three.js, Three.js Drei was integrated to simplify the implementation of common 3D features. Drei provides useful helpers, abstractions, and components that streamline the development process.",
       },
     },
   },
@@ -59,21 +60,22 @@ export const projects = [
       panelOne: {
         title: "Arlen Modeling Agency",
         description:
-          "The goal of this project was to build a robust, highly optimized multilingual web application with a focus on SEO and performance, using cutting-edge web technologies and frameworks. The project aimed to cater to a diverse audience by offering content in multiple languages, ensuring accessibility and usability on a global scale.",
+          "The goal of this project was to build a robust, highly optimized multilingual web application with a focus on SEO and performance. The project aimed to cater to a diverse audience by offering content in multiple languages, ensuring accessibility and usability on a global scale.",
         image: arlenHero,
       },
       panelTwo: {
         image: arlenServices,
       },
       panelThree: {
-        image: arlenVideo,
+        description:
+          "Achieving a balance between high-end animations and optimal performance was a significant challenge, given the complexity of animations with Framer Motion and GSAP. Additionally, integrating dynamic routing while maintaining a 100% SEO score involved advanced configuration of Next.js's capabilities, which was crucial for ensuring that all pages were crawlable and indexable by search engines",
       },
       panelFour: {
         descriptionOne:
-          "Arlen is a dynamic web application built on Next.js, leveraging React components for efficient, reusable code. The website incorporates advanced animations and interactivity using Framer Motion and GSAP (GreenSock Animation Platform), enhancing the user experience with visually appealing effects. Utilizing Next.js's built-in routing system, the site features dynamic routes that ensure seamless navigation without page reloads",
+          "Arlen is a dynamic web application built on Next.js, leveraging React components for efficient, reusable code. The website incorporates advanced animations and interactivity using Framer Motion and GSAP, enhancing the user experience with visually appealing effects. Utilizing Next.js's built-in routing system, the site features dynamic routes that ensure seamless navigation without page reloads.",
 
         descriptionTwo:
-          "Achieving a balance between high-end animations and optimal performance was a significant challenge, given the complexity of animations with Framer Motion and GSAP. To address this, careful attention was paid to the performance implications of scripts and animations, optimizing them to ensure they did not detract from the site’s speed and responsiveness. Additionally, integrating dynamic routing while maintaining a 100% SEO score involved meticulous configuration of Next.js’s server-side rendering capabilities, which was crucial for ensuring that all pages were crawlable and indexable by search engines",
+          "The project also focused on SEO optimization to improve search engine visibility and ranking. By implementing multilingual support, the site caters to a global audience, providing content in multiple languages. Integrating a custom translation system allowed for easy management of translations and ensured a consistent user experience across different language versions of the site.",
       },
     },
   },
@@ -83,32 +85,27 @@ export const projects = [
     title: "Podcastr",
     images: [podcastrHero, podcastrServices, podcastrMobiles],
     video: podcastrVideo,
-    url: "https://arlen-alpha.vercel.app/",
+    url: "https://podcastr-lyart-psi.vercel.app/",
     projectsPageData: {
       panelOne: {
-        title: "Project Three",
+        title: "Podcastr AI Podcast Creation",
         description:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
+          "Podcastr is an innovative web application that empowers users to create their own podcasts using advanced AI technology. By leveraging the capabilities of ChatGPT, DALL-E, Convex, and other cutting-edge tools.",
         image: podcastrHero,
       },
       panelTwo: {
         image: podcastrServices,
       },
       panelThree: {
-        image: podcastrVideo,
+        description:
+          "Podcastr's interface is designed to be user-friendly and intuitive. It guides users through each step of the podcast creation process, from scripting and editing to publishing and promoting. The built-in editing tools allow users to fine-tune their scripts and audio before publishing, ensuring a polished final product",
       },
       panelFour: {
         descriptionOne:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
+          "By integrating OpenAI's ChatGPT, users can generate high-quality and engaging podcast scripts also, DALL-E enables the creation of custom podcast cover art. User management and authentication are handled securely through Clerk.",
 
         descriptionTwo:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
-      },
-      panelFive: {
-        title: "Project One",
-        description:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum est minus, dignissimos placeat consectetur beatae? Obcaecati, provident hic architecto distinctio sequi id blanditiis facere possimus ea nisi, atque ex?",
-        image: podcastrServices,
+          "The platform also utilizes Convex for efficient server actions, ensuring fast and reliable performance. Middleware is employed to handle various processes, streamlining the workflow and enhancing the overall user experience.",
       },
     },
   },

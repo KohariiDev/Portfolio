@@ -16,7 +16,7 @@ export const links = [
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "/",
     src: "hero-image.webp",
   },
 ];

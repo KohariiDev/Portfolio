@@ -1,15 +1,12 @@
 "use client";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import {
-  handleMouseEnter,
-  handleMouseLeave,
-} from "../events/projectsEventHandlers";
+import useCursorHandlers from "../events/projectsEventHandlers";
 
 import TransitionLink from "../utils/TransitionLink";
 import { slugify } from "../utils/slugify";
@@ -36,12 +33,14 @@ const videoSources = {
   Podcastr: [podcastrVideo, podcastrPhoneVideo],
 };
 
-export default function Projects({ projects }) {
+function Projects({ projects }) {
   const containerRef = useRef(null);
   const imageHolderRef = useRef(null);
   const cursorRef = useRef(null);
+  const { handleMouseEnter, handleMouseLeave } = useCursorHandlers(cursorRef);
 
   useEffect(() => {
+    console.log("Projects component re-rendered");
     if (!containerRef.current || !imageHolderRef.current) return;
 
     const elements = imageHolderRef.current.children;
@@ -132,7 +131,7 @@ export default function Projects({ projects }) {
                   <Image
                     src={project.src[index]}
                     alt="Description of the image"
-                    sizes="100vw"
+                    sizes="70vw"
                     className="h-full w-full object-contain md:object-cover"
                     fill
                   />
@@ -145,3 +144,5 @@ export default function Projects({ projects }) {
     </>
   );
 }
+
+export default React.memo(Projects);

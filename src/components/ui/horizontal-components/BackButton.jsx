@@ -9,10 +9,10 @@ const BackButton = () => {
     <Link href="/">
       <Rounded
         backgroundColor="#ef4444"
-        className="fixed left-10 top-[530px] z-50 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-red-400 tracking-wider text-hero-color lg:top-[720px] lg:h-[60px] lg:w-[60px] xl:top-[625px] 2k:top-[1550px] 2k:w-[120px] 2k:h-[120px]"
+        className="fixed left-10 top-[530px] z-50 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-red-400 tracking-wider text-hero-color lg:top-[720px] lg:h-[50px] lg:w-[50px] xl:top-[625px] 2k:top-[1550px] 2k:w-[120px] 2k:h-[120px]"
       >
         <button className="z-50 uppercase">
-          <Image src={back} className="w-7" alt="back button" />
+          <Image src={back} className="w-6" alt="back button" />
         </button>
       </Rounded>
     </Link>

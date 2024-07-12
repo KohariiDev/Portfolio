@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo } from "react";
+import React, { useRef, useMemo } from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { useInViewAnimation } from "../../hooks/useInViewAnimation";
 
@@ -18,16 +18,9 @@ const slideUp = (delay, y) => ({
 
 const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight, y = 150 }) => {
   const description = useRef(null);
-  const isInView = useInViewAnimation(description);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const isInView = useInViewAnimation(description, true);
 
-  useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [isInView, hasAnimated]);
-
-  const animationVariants = useMemo(() => slideUp(delay, y), [delay]);
+  const animationVariants = useMemo(() => slideUp(delay, y), [delay, y]);
   const words = useMemo(() => phrase.split(" "), [phrase]);
 
   return (
@@ -40,7 +33,7 @@ const FadeUp = ({ phrase, paragraphClass, delay = 0, lineHeight, y = 150 }) => {
                 className="inline-block"
                 variants={animationVariants}
                 custom={index}
-                animate={hasAnimated ? "open" : "closed"}
+                animate={isInView ? "open" : "closed"}
               >
                 {word}
                 {index < words.length - 1 && "\u00A0"}

@@ -1,15 +1,17 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
+import LazyComponent from "@/components/LazyComponent";
+
 // Components
-import Hero from "../components/Hero";
-import PreLoader from "../components/Preloader";
+import PreLoader from "@/components/Preloader";
 
-const TextPath = dynamic(() => import("../components/TextPath"));
-const Projects = dynamic(() => import("../components/Projects"));
-const Services = dynamic(() => import("../components/Services"));
+const Hero = dynamic(() => import("@/components/Hero"));
+const TextPath = dynamic(() => import("@/components/TextPath"));
+const Projects = dynamic(() => import("@/components/Projects"));
+const Services = dynamic(() => import("@/components/Services"));
 
-const SlidingImages = dynamic(() => import("../components/SlidingImages"));
+import SlidingImages from "@/components/SlidingImages";
 
 import {
   heroData,
@@ -24,7 +26,9 @@ export default function Home() {
   return (
     <main>
       <PreLoader />
-      <Hero socials={socialsData} hero={heroData} />
+      <Suspense>
+        <Hero socials={socialsData} hero={heroData} />
+      </Suspense>
       <Suspense>
         <TextPath textPath={textPathData} />
       </Suspense>
@@ -34,9 +38,8 @@ export default function Home() {
       <Suspense>
         <Services services={servicesData} serviceText={serviceTextData} />
       </Suspense>
-      <Suspense>
-        <SlidingImages />
-      </Suspense>
+
+      <LazyComponent component={SlidingImages} />
     </main>
   );
 }

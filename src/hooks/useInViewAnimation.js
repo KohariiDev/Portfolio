@@ -1,4 +1,5 @@
 import { useInView } from "framer-motion";
+import { useMemo } from "react";
 
 export const useInViewAnimation = (
   ref,
@@ -12,5 +13,5 @@ export const useInViewAnimation = (
     amount: amount,
   });
 
-  return isInView;
+  return useMemo(() => isInView, [isInView]);
 };

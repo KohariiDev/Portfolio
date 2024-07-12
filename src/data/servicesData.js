@@ -10,24 +10,24 @@ export const servicesData = [
     title: "Web Development",
     number: "01",
     description:
-      "Good brand design the visual representation and identity of a brand that communicates its values, personality, and purpose to its target audience",
+      "I started my journey in front-end development over two years ago, building a solid foundation in HTML, CSS, and JavaScript. Along the way, I've expanded my expertise to include modern frameworks and tools like React and Vue.js.",
   },
   {
     title: "Motion & Animation",
     number: "02",
     description:
-      "A well-designed website is essential for businesses and individuals alike, as it plays a crucial role in attracting and engaging visitors",
+      "I enjoy the challenges that come with creating complex animations. Using JavaScript and libraries like Framer Motion and GSAP, I develop engaging and interactive animations that enhance user experience and bring web elements to life.",
   },
   {
     title: "SEO & Marketing",
     number: "03",
     description:
-      "Good product design refers to the process of creating products that are not only visually appealing but also functional, user-friendly, and capable of solving a specific problem or fulfilling a need",
+      "Having a comprehensive understanding of digital marketing, I excel at implementing effective SEO strategies and marketing campaigns. My approach is data-driven, focusing on boosting online visibility, attracting targeted traffic, and driving conversions.",
   },
   {
-    title: "AR/VR Design",
+    title: "Project Management",
     number: "04",
     description:
-      "Create an immersive experience by leveraging the capabilities of AR/VR technologies. Utilize 3D audio, realistic graphics, and interactive elements to make users feel fully engaged in the virtual environment.",
+      "I have a passion for always finishing what I start and ensuring that I do the best job possible. My project management approach focuses on planning, clear communication, and efficient execution to deliver projects on time and within budget.",
   },
 ];
