@@ -23,7 +23,11 @@ export default function Home() {
       <PreLoader />
       <Hero socials={socialsData} hero={heroData} />
       <TextPath textPath={textPathData} />
-      <Projects projects={projectsData} />
+      <LazyComponent
+        component={Projects}
+        projects={projectsData}
+        margin={"750px"}
+      />
       <Services services={servicesData} serviceText={serviceTextData} />
 
       <LazyComponent component={SlidingImages} margin={"550px"} />
