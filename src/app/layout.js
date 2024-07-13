@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 
 import Header from "../components/header";
@@ -45,12 +44,15 @@ export default function RootLayout({ children }) {
             <NavProvider>
               <Header />
               {children}
-              <LazyComponent component={Footer} footer={footerData} margin={"550px"} />
+              <LazyComponent
+                component={Footer}
+                footer={footerData}
+                margin={"550px"}
+              />
             </NavProvider>
           </LenisProvider>
         </div>
       </body>
-      <GoogleAnalytics gaId="G-T9GMVL94PH" />
     </html>
   );
 }

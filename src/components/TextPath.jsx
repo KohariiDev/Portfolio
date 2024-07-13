@@ -51,7 +51,7 @@ const Work = React.memo(({ scrollProgress, text2 }) => {
   return (
     <div
       id="work"
-      className="hidden md:block bg-project-color mt-72 h-[260px] overflow-hidden md:mt-0 2k:h-[300px]"
+      className="hidden md:block bg-project-color mt-72 h-[260px] overflow-hidden md:mt-0 2k:h-[350px]"
     >
       <motion.div
         style={{ y }}
