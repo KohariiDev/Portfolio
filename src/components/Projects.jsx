@@ -91,7 +91,7 @@ function Projects({ projects }) {
               {/* Image */}
               <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
                 <Image
-                  src={project.images[0]}
+                  src={project.images}
                   fill
                   style={{ objectFit: "cover" }}
                   alt="Description of the image"
@@ -124,7 +124,7 @@ function Projects({ projects }) {
               >
                 <div className="relative h-full w-full overflow-hidden md:h-2/4 md:w-2/4">
                   <Image
-                    src={project.src[index]}
+                    src={project.src}
                     alt="Description of the image"
                     sizes="70vw"
                     className="h-full w-full object-contain md:object-cover"

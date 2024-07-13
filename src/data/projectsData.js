@@ -1,20 +1,12 @@
-import iphone from "../../public/images/project-one/iphone.webp";
-import iphonePhone from "../../public/images/project-one/iphone-phone.webp";
-
-import arlen from "../../public/images/project-two/arlen.webp";
-import arlenMObiles from "../../public/images/project-two/arlen-mobiles.webp";
-
-import podcastr from "../../public/images/project-three/podcastr.webp";
-import podcastrMobiles from "../../public/images/project-three/podcastr-mobiles.webp";
-
 export const projectsData = [
   {
     number: "01",
     title: "Iphone",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: [iphone, iphone, iphone, iphone],
-    images: [iphonePhone, iphonePhone, iphonePhone],
+    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-eUUWp8g9i9fPIUWHlh0A7DUHpBLvyB.webp",
+    images:
+      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-phone-UNjbRWmSmZYWiyrhNy1v6b1pwr8h1v.webp",
     alt: "hero image 1",
     cta: "View Project",
   },
@@ -24,8 +16,9 @@ export const projectsData = [
     title: "Arlen",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: [arlen, arlen, arlen, arlen],
-    images: [arlenMObiles, arlenMObiles, arlenMObiles],
+    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-x9emtBFcnltzHeJmxRUL52erL81cfl.webp",
+    images:
+      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-mobiles-QV9sWbVySiYsZNtKCXxBJ5KiIAV15S.webp",
     alt: "hero image 2",
     cta: "View Project",
   },
@@ -35,8 +28,9 @@ export const projectsData = [
     title: "Podcastr",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: [podcastr, podcastr, podcastr, podcastr],
-    images: [podcastrMobiles, podcastrMobiles, podcastrMobiles],
+    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-aF6cczETFSyHffVjcGGqr6cH5dHt5V.webp",
+    images:
+      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-mobiles-oZ4CQJ8EJBmqKwHlGAu5bhDlYCsdFO.webp",
     alt: "hero image 3",
     cta: "View Project",
   },

@@ -6,6 +6,16 @@ const withBundleAnalyzer = createBundleAnalyzer({
 });
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '5ygl4ncrmubeyvpo.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack(config, options) {
     return config;
   },
