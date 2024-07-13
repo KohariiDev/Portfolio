@@ -20,10 +20,6 @@ export default function TextPath({ textPath }) {
     });
   }, [scrollYProgress]);
 
-  useEffect(() => {
-    console.log("TextPath component re-rendered");
-  });
-
   return (
     <div id="textPath" ref={container} className="mt-24 bg-hero-color md:mt-0">
       <svg className="mb-0 w-full" viewBox="0 0 250 90">
@@ -51,9 +47,6 @@ export default function TextPath({ textPath }) {
 }
 
 const Work = React.memo(({ scrollProgress, text2 }) => {
-  useEffect(() => {
-    console.log("Work component re-rendered");
-  });
   const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
   return (
     <div
