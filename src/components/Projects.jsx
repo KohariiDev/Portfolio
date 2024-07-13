@@ -14,23 +14,19 @@ import CustomCursor from "./ui/CustomCursor";
 import VideoInView from "../hooks/useVideoInView";
 import Placeholder from "./Placeholder";
 
-// import videos directly here because Vercel can't recognize the path
-// Iphone Project Videos
-import iphoneVideo from "../../public/videos/iphone/iphone-video.mp4";
-import iphonePhoneVideo from "../../public/videos/iphone/iphone-phone-video.mp4";
-
-// Arlen Project Videos
-import arlenVideo from "../../public/videos/arlen/arlen-video.mp4";
-import arlenPhoneVideo from "../../public/videos/arlen/arlen-phone-video.mp4";
-
-// Podcastr Project Videos
-import podcastrVideo from "../../public/videos/podcastr/podcastr-video.mp4";
-import podcastrPhoneVideo from "../../public/videos/podcastr/podcastr-phone-video.mp4";
-
 const videoSources = {
-  Iphone: [iphoneVideo, iphonePhoneVideo],
-  Arlen: [arlenVideo, arlenPhoneVideo],
-  Podcastr: [podcastrVideo, podcastrPhoneVideo],
+  Iphone: [
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-video-llF4NSG9c8QEKSlKxd65YBYdtAmZSE.mp4",
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-phone-video-szL4DCYK1K0UnwSQGRCSM8DUyKGSEF.mp4",
+  ],
+  Arlen: [
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-video-P7y6cHzvtpMrLDTXGtNdgfxZdr6EZo.mp4",
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-phone-video-NpnNjdScQj4Y4p8vL7LpwIusaXb2LS.mp4",
+  ],
+  Podcastr: [
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-video-edOqh8BVoqGUHs4a4n19yl7LV6mfh6.mp4",
+    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-phone-video-Qvc3rKII6VGidVR7z0fkXDJoox2rZP.mp4",
+  ],
 };
 
 function Projects({ projects }) {
