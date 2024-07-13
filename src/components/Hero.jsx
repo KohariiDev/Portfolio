@@ -4,16 +4,12 @@ import GsapMagnetic from "./animation/gsap";
 import Rounded from "./ui/button";
 import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
-import { useInViewAnimation } from "../hooks/useInViewAnimation";
 import { LazyMotion, m } from "framer-motion";
 import loadFeatures from "../utils/framerFeatures/loadFeatures";
 import handleEmailClick from "../events/handleEmailClick";
-import React, { useEffect, useRef, useMemo } from "react";
+import React, { useMemo } from "react";
 
 const Hero = React.memo(({ socials, hero }) => {
-  useEffect(() => {
-    console.log("Hero component re-rendered");
-  });
 
   const socialsArray = useMemo(() => Object.values(socials), [socials]);
   const { title, para, cta, buttonAction } = hero;

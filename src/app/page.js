@@ -31,7 +31,11 @@ export default function Home() {
         <TextPath textPath={textPathData} />
       </Suspense>
 
-      <LazyComponent component={Projects} projects={projectsData} />
+      <LazyComponent
+        component={Projects}
+        preloadAfter={1800}
+        projects={projectsData}
+      />
 
       <Suspense>
         <Services services={servicesData} serviceText={serviceTextData} />

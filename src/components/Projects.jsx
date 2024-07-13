@@ -40,7 +40,6 @@ function Projects({ projects }) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHandlers(cursorRef);
 
   useEffect(() => {
-    console.log("Projects component re-rendered");
     if (!containerRef.current || !imageHolderRef.current) return;
 
     const elements = imageHolderRef.current.children;

@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 
 import Header from "../components/header";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
           </LenisProvider>
         </div>
       </body>
+      <GoogleAnalytics gaId="G-T9GMVL94PH" />
     </html>
   );
 }

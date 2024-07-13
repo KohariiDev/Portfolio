@@ -27,7 +27,7 @@ function Services({ services, serviceText }) {
       useTransform(
         scrollYProgress,
         [index / totalChars, (index + 1) / totalChars],
-        [200, 500],
+        [200, 700],
       ),
     );
 
@@ -44,15 +44,11 @@ function Services({ services, serviceText }) {
     };
   }, [fontWeightControls]);
 
-  useEffect(() => {
-    console.log("Services component re-rendered");
-  })
-
   return (
     <section
       ref={container}
       id="about"
-      className="mt-[-500px] overflow-hidden bg-hero-color px-4 pb-8 md:px-16 md:pb-16 xl:px-24"
+      className="mt-[-350px] overflow-hidden bg-hero-color px-4 pb-8 md:px-16 md:pb-16 xl:px-24"
     >
       <div className="mb-28 flex flex-col justify-between md:flex-row">
         <div className="relative ml-auto mr-auto flex flex-col">
@@ -70,7 +66,7 @@ function Services({ services, serviceText }) {
             <motion.h1
               ref={textRef}
               initial={{ fontWeight: 100 }}
-              className="text-sm font-thin uppercase tracking-wide text-secondary-color underline underline-offset-8 opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
+              className="text-sm font-thin uppercase tracking-wide text-secondary-color opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
             >
               {intro.split("").map((char, index) => (
                 <motion.span key={index}>{char}</motion.span>
