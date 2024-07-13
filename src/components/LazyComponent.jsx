@@ -1,28 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
-import Placeholder from "@/components/Placeholder";
 
-const LazyComponent = ({ component: Component, preloadAfter, ...props }) => {
-  const [isTrue, setIsTrue] = useState(false);
+const LazyComponent = ({ component: Component, margin, ...props }) => {
   const ref = useRef();
-  const isInView = useInViewAnimation(ref, true, "650px", 0);
+  const isInView = useInViewAnimation(ref, true, margin, 0);
 
-  useEffect(() => {
-    if (preloadAfter) {
-      const timer = setTimeout(() => {
-        setIsTrue(true);
-      }, preloadAfter);
-      return () => clearTimeout(timer);
-    }
-  }, [preloadAfter]);
-
-  return (
-    <div ref={ref}>
-      {isInView || isTrue ? <Component {...props} /> : <Placeholder />}
-    </div>
-  );
+  return <div ref={ref}>{isInView ? <Component {...props} /> : null}</div>;
 };
 
 export default LazyComponent;

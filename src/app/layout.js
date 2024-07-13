@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             <NavProvider>
               <Header />
               {children}
-              <LazyComponent component={Footer} footer={footerData} />
+              <LazyComponent component={Footer} footer={footerData} margin={"550px"} />
             </NavProvider>
           </LenisProvider>
         </div>
