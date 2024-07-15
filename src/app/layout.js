@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import Header from "../components/header";
 import { NavProvider } from "@/context/NavContext";
 import { Oswald } from "next/font/google";
@@ -52,6 +52,7 @@ export default function RootLayout({ children }) {
             </NavProvider>
           </LenisProvider>
         </div>
+        <Analytics />
       </body>
     </html>
   );
