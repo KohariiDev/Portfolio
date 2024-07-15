@@ -12,10 +12,20 @@ function useWindowSize() {
       });
     }
 
-    window.addEventListener("resize", handleResize);
+    function debounce(func, wait) {
+      let timeout;
+      return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, arguments), wait);
+      };
+    }
+
+    const debouncedHandleResize = debounce(handleResize, 100);
+
+    window.addEventListener("resize", debouncedHandleResize);
     handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", debouncedHandleResize);
   }, []);
 
   return windowSize;

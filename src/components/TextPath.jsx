@@ -21,7 +21,11 @@ export default function TextPath({ textPath }) {
   }, [scrollYProgress]);
 
   return (
-    <div id="textPath" ref={container} className="hidden md:block mt-24 bg-hero-color md:mt-0">
+    <div
+      id="textPath"
+      ref={container}
+      className="mt-24 hidden bg-hero-color md:mt-0 md:block"
+    >
       <svg className="mb-0 w-full" viewBox="0 0 250 90">
         <path
           fill="none"
@@ -51,7 +55,7 @@ const Work = React.memo(({ scrollProgress, text2 }) => {
   return (
     <div
       id="work"
-      className="hidden md:block bg-project-color mt-72 h-[260px] overflow-hidden md:mt-0 2k:h-[350px]"
+      className="bg-project-color mt-72 hidden h-[260px] overflow-hidden md:mt-0 md:block 2k:h-[350px]"
     >
       <motion.div
         style={{ y }}

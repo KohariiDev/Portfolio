@@ -8,8 +8,10 @@ import { LazyMotion, m } from "framer-motion";
 import loadFeatures from "../utils/framerFeatures/loadFeatures";
 import handleEmailClick from "../events/handleEmailClick";
 import React, { useMemo } from "react";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const Hero = React.memo(({ socials, hero }) => {
+  const { width } = useWindowSize();
 
   const socialsArray = useMemo(() => Object.values(socials), [socials]);
   const { title, para, cta, buttonAction } = hero;
@@ -22,7 +24,8 @@ const Hero = React.memo(({ socials, hero }) => {
         id="home"
         className="relative flex min-h-screen flex-col overflow-hidden bg-hero-color px-1 pt-36 text-slate-900 md:px-8 xl:px-20"
       >
-        <m.h1 className="absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-tight md:top-20 md:text-nowrap md:text-left md:text-[7rem] lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl 2k:text-20xl">
+        {/* title */}
+        <m.h1 className="absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-wider md:top-20 md:text-nowrap md:text-left md:text-[7rem] md:tracking-tight lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl 2k:text-20xl">
           <FadeUpTitle word={title} delay={2000} />
           <m.span
             initial={{ x: 100 }}
@@ -42,6 +45,7 @@ const Hero = React.memo(({ socials, hero }) => {
           ></m.span>
         </m.h1>
 
+        {/* socials */}
         <div className="absolute bottom-5 right-5 ml-auto hidden items-center gap-10 opacity-90 lg:flex">
           {socialsArray.map((social, i) => (
             <m.span
@@ -64,33 +68,57 @@ const Hero = React.memo(({ socials, hero }) => {
           ))}
         </div>
 
-        <m.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
-          className="ml-auto mr-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
-        >
-          <Rounded
-            backgroundColor="#ef4444"
-            className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
+        {/* button */}
+        {width > 425 ? (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
+            className="mx-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
           >
-            <button
-              onClick={handleClick}
-              className="z-50 text-sm uppercase md:text-base"
+            <Rounded
+              backgroundColor="#ef4444"
+              className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
             >
-              {buttonAction}
-            </button>
-          </Rounded>
-        </m.div>
+              <button
+                onClick={handleClick}
+                className="z-50 text-xs uppercase md:text-base"
+              >
+                {buttonAction}
+              </button>
+            </Rounded>
+          </m.div>
+        ) : (
+          <div className="mx-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72">
+            <Rounded
+              backgroundColor="#ef4444"
+              className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
+            >
+              <button
+                onClick={handleClick}
+                className="z-50 text-xs uppercase md:text-base"
+              >
+                {buttonAction}
+              </button>
+            </Rounded>
+          </div>
+        )}
 
-        <div className="ml-auto mr-auto mt-10 max-w-xl px-4 text-center md:mb-auto lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1300px]">
-          <FadeUp
-            phrase={para}
-            delay={3500}
-            paragraphClass="text-lg opacity-85 2k:text-7xl"
-            y={400}
-          />
+        {/* paragraph */}
+        <div className="mx-auto mb-20 mt-10 max-w-xl text-center md:mb-auto md:px-4 lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1300px]">
+          {width > 425 ? (
+            <FadeUp
+              phrase={para}
+              delay={3500}
+              paragraphClass="text-lg opacity-85 2k:text-7xl"
+              y={400}
+            />
+          ) : (
+            <p className="px-4 text-left leading-relaxed tracking-widest text-slate-800">
+              {para}
+            </p>
+          )}
         </div>
-
+        {/* Version */}
         <div className="absolute bottom-5 left-0">
           <m.p
             initial={{ y: 100 }}
@@ -109,6 +137,7 @@ const Hero = React.memo(({ socials, hero }) => {
             Version 1.0
           </m.p>
         </div>
+        {/* CTA */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
           <m.p
             initial={{ y: 100 }}

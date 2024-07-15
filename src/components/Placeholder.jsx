@@ -1,6 +1,6 @@
 const Placeholder = () => {
   return (
-    <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80 flex justify-center items-center">
+    <div className="relative flex items-center justify-center bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
       <svg
         aria-hidden="true"
         className="h-8 w-8 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"

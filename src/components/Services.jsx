@@ -4,11 +4,13 @@ import React, { useEffect, useRef } from "react";
 import FadeUp from "./animation/FadeUp";
 import FadeUpTitle from "./animation/FadeUpTitle";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
+import useWindowSize from "@/hooks/useWindowSize";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 function Services({ services, serviceText }) {
   const { title, intro, description } = serviceText;
+  const { width } = useWindowSize();
 
   const titleRef = useRef(null);
   const isInView = useInViewAnimation(titleRef, true);
@@ -52,12 +54,18 @@ function Services({ services, serviceText }) {
     >
       <div className="mb-28 flex flex-col justify-between md:flex-row">
         <div className="relative ml-auto mr-auto flex flex-col">
-          <motion.h1
-            ref={titleRef}
-            className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl"
-          >
-            {isInView && <FadeUpTitle word={title} />}
-          </motion.h1>
+          {width > 425 ? (
+            <motion.h1
+              ref={titleRef}
+              className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl"
+            >
+              {isInView && <FadeUpTitle word={title} />}
+            </motion.h1>
+          ) : (
+            <h1 className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl">
+              {title}
+            </h1>
+          )}
         </div>
       </div>
       <div>
@@ -75,10 +83,15 @@ function Services({ services, serviceText }) {
           </div>
           <div className="flex-1">
             <span className="ml-auto w-3/4 text-justify tracking-wider text-slate-800 2k:text-3xl">
-              <FadeUp delay={700} phrase={description} />
+              {width > 425 ? (
+                <FadeUp delay={700} phrase={description} />
+              ) : (
+                description
+              )}
             </span>
           </div>
         </div>
+        
         {services.map((service, index) => {
           const { title, description, number } = service;
           return (
