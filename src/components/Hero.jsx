@@ -76,8 +76,8 @@ const Hero = React.memo(({ socials, hero }) => {
             className="mx-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
           >
             <Rounded
-              backgroundColor="#ef4444"
-              className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
+              backgroundColor="#0F172A"
+              className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full bg-secondary-color text-hero-color transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
             >
               <button
                 onClick={handleClick}
@@ -88,14 +88,14 @@ const Hero = React.memo(({ socials, hero }) => {
             </Rounded>
           </m.div>
         ) : (
-          <div className="mx-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72">
+          <div className="mx-auto mt-24">
             <Rounded
               backgroundColor="#ef4444"
-              className="flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full border-[1px] border-secondary-color text-slate-700 transition-colors duration-500 ease-in-out hover:text-slate-200 lg:h-[130px] lg:w-[130px] 2k:h-[200px] 2k:w-[200px]"
+              className="flex h-[90px] w-[90px] bg-secondary-color items-center justify-center rounded-full text-hero-color"
             >
               <button
                 onClick={handleClick}
-                className="z-50 text-xs uppercase md:text-base"
+                className="z-50 text-xs uppercase"
               >
                 {buttonAction}
               </button>

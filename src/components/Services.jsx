@@ -54,18 +54,12 @@ function Services({ services, serviceText }) {
     >
       <div className="mb-28 flex flex-col justify-between md:flex-row">
         <div className="relative ml-auto mr-auto flex flex-col">
-          {width > 425 ? (
-            <motion.h1
-              ref={titleRef}
-              className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl"
-            >
-              {isInView && <FadeUpTitle word={title} />}
-            </motion.h1>
-          ) : (
-            <h1 className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl">
-              {title}
-            </h1>
-          )}
+          <motion.h1
+            ref={titleRef}
+            className="mb-4 text-8xl font-medium uppercase tracking-tight text-slate-900 md:mb-0 md:text-nowrap md:text-9xl lg:text-16xl 2k:text-20xl"
+          >
+            {isInView && <FadeUpTitle word={title} />}
+          </motion.h1>
         </div>
       </div>
       <div>
@@ -91,7 +85,7 @@ function Services({ services, serviceText }) {
             </span>
           </div>
         </div>
-        
+
         {services.map((service, index) => {
           const { title, description, number } = service;
           return (

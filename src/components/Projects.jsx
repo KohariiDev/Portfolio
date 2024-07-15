@@ -131,7 +131,7 @@ function Projects({ projects }) {
                     fill
                   />
                 </div>
-                <h1 className="absolute top-20 text-7xl font-medium tracking-widest text-secondary-color opacity-75 md:hidden">
+                <h1 className="absolute top-20 text-8xl font-bold tracking-widest text-secondary-color opacity-75 md:hidden">
                   WORK
                 </h1>
                 <h1 className="absolute bottom-20 text-2xl tracking-widest text-secondary-color opacity-75 md:hidden">
