@@ -22,20 +22,20 @@ export const footerData = {
   ],
   socials: [
     {
-      title: "facebook",
-      href: "https://www.facebook.com",
+      title: "linkedIn",
+      href: "https://linkedin.com/in/norbertkoharidev",
     },
     {
-      title: "twitter",
-      href: "https://www.twitter.com",
+      title: "Github",
+      href: "https://github.com/KohariiDev",
     },
     {
       title: "youtube",
       href: "https://www.youtube.com",
     },
     {
-      title: "tiktok",
-      href: "https://www.tiktok.com",
+      title: "Twitter",
+      href: "https://www.x.com",
     },
   ],
 };

@@ -9,6 +9,7 @@ import loadFeatures from "../utils/framerFeatures/loadFeatures";
 import handleEmailClick from "../events/handleEmailClick";
 import React, { useMemo } from "react";
 import useWindowSize from "@/hooks/useWindowSize";
+import Link from "next/link";
 
 const Hero = React.memo(({ socials, hero }) => {
   const { width } = useWindowSize();
@@ -48,23 +49,25 @@ const Hero = React.memo(({ socials, hero }) => {
         {/* socials */}
         <div className="absolute bottom-5 right-5 ml-auto hidden items-center gap-10 opacity-90 lg:flex">
           {socialsArray.map((social, i) => (
-            <m.span
-              key={i}
-              initial={{ y: 100 }}
-              animate={{
-                y: 0,
-                transition: {
-                  delay: 3 + i * 0.3,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 10,
-                  mass: 1,
-                },
-              }}
-              className="cursor-pointer fill-slate-600 hover:fill-secondary-color"
-            >
-              <GsapMagnetic>{social}</GsapMagnetic>
-            </m.span>
+            <Link key={i} href={social.url} passHref>
+              <m.span
+                key={i}
+                initial={{ y: 100 }}
+                animate={{
+                  y: 0,
+                  transition: {
+                    delay: 3 + i * 0.3,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                    mass: 1,
+                  },
+                }}
+                className="cursor-pointer fill-slate-600 hover:fill-secondary-color"
+              >
+                <GsapMagnetic>{social.icon}</GsapMagnetic>
+              </m.span>
+            </Link>
           ))}
         </div>
 
@@ -91,12 +94,9 @@ const Hero = React.memo(({ socials, hero }) => {
           <div className="mx-auto mt-24">
             <Rounded
               backgroundColor="#ef4444"
-              className="flex h-[90px] w-[90px] bg-secondary-color items-center justify-center rounded-full text-hero-color"
+              className="flex h-[90px] w-[90px] items-center justify-center rounded-full bg-secondary-color text-hero-color"
             >
-              <button
-                onClick={handleClick}
-                className="z-50 text-xs uppercase"
-              >
+              <button onClick={handleClick} className="z-50 text-xs uppercase">
                 {buttonAction}
               </button>
             </Rounded>
