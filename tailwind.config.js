@@ -19,9 +19,9 @@ module.exports = {
         "hero-color": "#f5efef",
         "secondary-color": "#ef4444",
         "projects-color": "#CCCCCC",
-        "iphone" : "#041319",
-        "brainwave" : "#171b20",
-        "arlen" : "#e1e3e7",
+        iphone: "#041319",
+        brainwave: "#171b20",
+        arlen: "#e1e3e7",
       },
 
       fontSize: {
@@ -77,6 +77,7 @@ module.exports = {
       },
       screens: {
         "2k": "2048px",
+        "xl2": { min: "1200px", max: "1430px" },
       },
     },
   },
