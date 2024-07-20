@@ -32,6 +32,9 @@ const FirstPanel = ({ project }) => {
             src={project.projectsPageData.panelOne.image}
             alt="hero"
             className="w-1/2"
+            width={500}
+            height={500}
+            sizes="50vw"
           />
         </div>
       </div>

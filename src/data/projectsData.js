@@ -4,9 +4,8 @@ export const projectsData = [
     title: "Iphone",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-eUUWp8g9i9fPIUWHlh0A7DUHpBLvyB.webp",
-    images:
-      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-phone-UNjbRWmSmZYWiyrhNy1v6b1pwr8h1v.webp",
+    src: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone.webp",
+    images: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-phone.webp",
     alt: "hero image 1",
     cta: "View Project",
   },
@@ -16,9 +15,8 @@ export const projectsData = [
     title: "Arlen",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-x9emtBFcnltzHeJmxRUL52erL81cfl.webp",
-    images:
-      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-mobiles-QV9sWbVySiYsZNtKCXxBJ5KiIAV15S.webp",
+    src: "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen.webp",
+    images: "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-mobiles.webp",
     alt: "hero image 2",
     cta: "View Project",
   },
@@ -28,9 +26,9 @@ export const projectsData = [
     title: "Podcastr",
     description:
       "libero elementum tincidunt. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend. Nam auctor, nunc nec eleifend.",
-    src: "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-aF6cczETFSyHffVjcGGqr6cH5dHt5V.webp",
+    src: "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr.webp",
     images:
-      "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-mobiles-oZ4CQJ8EJBmqKwHlGAu5bhDlYCsdFO.webp",
+      "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-mobiles.webp",
     alt: "hero image 3",
     cta: "View Project",
   },

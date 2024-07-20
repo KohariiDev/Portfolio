@@ -19,22 +19,50 @@ import podcastrMobiles from "../public/images/project-three/podcastr-mobiles.web
 // Podcastr video
 import podcastrVideo from "../public/videos/podcastr/page-video.mp4";
 
+const iphone = {
+  iphoneServices: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-3d.webp",
+  iphoneMobiles:
+    "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-phone.webp",
+  iphoneHero: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-hero.webp",
+  iphoneVideo: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/page-video.mp4",
+};
+
+const arlen = {
+  arlenServices:
+    "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-services.webp",
+  arlenMobiles:
+    "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-mobiles.webp",
+  arlenHero: "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-hero.webp",
+  arlenVideo: "https://d34fm3rjhn7e1w.cloudfront.net/arlen/page-video.mp4",
+};
+
+const podcastr = {
+  podcastrServices:
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-services.webp",
+  podcastrMobiles:
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-mobiles.webp",
+  podcastrHero:
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-hero.webp",
+  podcastrVideo:
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/page-video.mp4",
+};
+
 export const projects = [
   {
     number: "01",
     title: "Iphone",
-    images: [iphoneHero, iphonePhone, iphone3D],
-    video: iphoneVideo,
+    images: [iphone.iphoneHero, iphone.iphoneServices, iphone.iphoneMobiles],
+    video: iphone[3],
     url: "https://iphone-3-d-eight.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "3D iPhone Showcase",
         description:
           "The primary goal of this project was to replicate the experience of the original iPhone website, incorporating modern web technologies to present the iPhone in a dynamic, interactive 3D format.",
-        image: iphone3D,
+        image: iphone.iphoneServices,
       },
       panelTwo: {
-        image: iphoneHero,
+        image: iphone.iphoneHero,
       },
       panelThree: {
         description:
@@ -53,18 +81,18 @@ export const projects = [
   {
     number: "02",
     title: "Arlen",
-    images: [arlenServices, arlenMobiles, arlenHero],
-    video: arlenVideo,
+    images: [arlen.arlenHero, arlen.arlenServices, arlen.arlenMobiles],
+    video: arlen[3],
     url: "https://arlen-alpha.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "Arlen Modeling Agency",
         description:
           "The goal of this project was to build a robust, highly optimized multilingual web application with a focus on SEO and performance. The project aimed to cater to a diverse audience by offering content in multiple languages, ensuring accessibility and usability on a global scale.",
-        image: arlenHero,
+        image: arlen.arlenServices,
       },
       panelTwo: {
-        image: arlenServices,
+        image: arlen.arlenHero,
       },
       panelThree: {
         description:
@@ -83,18 +111,18 @@ export const projects = [
   {
     number: "03",
     title: "Podcastr",
-    images: [podcastrHero, podcastrServices, podcastrMobiles],
-    video: podcastrVideo,
+    images: [podcastr.podcastrHero, podcastr.podcastrServices, podcastr.podcastrMobiles],
+    video: podcastr[3],
     url: "https://podcastr-lyart-psi.vercel.app/",
     projectsPageData: {
       panelOne: {
         title: "Podcastr AI Podcast Creation",
         description:
           "Podcastr is an innovative web application that empowers users to create their own podcasts using advanced AI technology. By leveraging the capabilities of ChatGPT, DALL-E, Convex, and other cutting-edge tools.",
-        image: podcastrHero,
+        image: podcastr.podcastrServices,
       },
       panelTwo: {
-        image: podcastrServices,
+        image: podcastr.podcastrHero,
       },
       panelThree: {
         description:

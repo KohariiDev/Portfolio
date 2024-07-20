@@ -2,15 +2,12 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import iphone from "../../public/videos/iphone/page-video.mp4";
-import arlen from "../../public/videos/arlen/page-video.mp4";
-import podcastr from "../../public/videos/podcastr/page-video.mp4";
 import VideoInView from "@/hooks/useVideoInView";
 
 const videoMapping = {
-  iphone,
-  arlen,
-  podcastr,
+  iphone: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/page-video.mp4",
+  arlen: "https://d34fm3rjhn7e1w.cloudfront.net/arlen/page-video.mp4",
+  podcastr: "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/page-video.mp4",
 };
 
 const ProjectVideo = () => {

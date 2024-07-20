@@ -5,9 +5,19 @@ import Image from "next/image";
 const PageVideo = ({ children }) => {
   return (
     <div className="flex h-screen items-center justify-center bg-hero-color">
-      <Image className="hidden w-24 lg:block" src={arrow} alt="arrow" />
+      <Image
+        priority
+        className="hidden w-24 lg:block"
+        src={arrow}
+        alt="arrow"
+      />
       <div className="">{children}</div>
-      <Image className="hidden w-24 lg:block" src={arrow} alt="arrow" />
+      <Image
+        priority
+        className="hidden w-24 lg:block"
+        src={arrow}
+        alt="arrow"
+      />
     </div>
   );
 };
