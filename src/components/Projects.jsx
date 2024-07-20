@@ -16,16 +16,16 @@ import Placeholder from "./Placeholder";
 
 const videoSources = {
   Iphone: [
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-video-llF4NSG9c8QEKSlKxd65YBYdtAmZSE.mp4",
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/iphone/iphone-phone-video-vJDSJZNKHjNYEe7K7kv6WNNnCmh2kV.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-video.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-phone-video.mp4",
   ],
   Arlen: [
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-video-P7y6cHzvtpMrLDTXGtNdgfxZdr6EZo.mp4",
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/arlen-phone-video-UQuwW5yTHl7Ly66mQSJmYy1c02yvaY.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-video.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/arlen/arlen-phone-video.mp4",
   ],
   Podcastr: [
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-video-edOqh8BVoqGUHs4a4n19yl7LV6mfh6.mp4",
-    "https://5ygl4ncrmubeyvpo.public.blob.vercel-storage.com/podcastr/podcastr-phone-video-p7JHVU1YOyyxr813sRrIMWYnyfQEnV.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-video.mp4",
+    "https://d34fm3rjhn7e1w.cloudfront.net/podcastr/podcastr-phone-video.mp4",
   ],
 };
 
