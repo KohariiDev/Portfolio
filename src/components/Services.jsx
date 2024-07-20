@@ -19,32 +19,25 @@ function Services({ services, serviceText }) {
   const textRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: textRef,
-    offset: ["start end", "start 30%"],
+    offset: ["start end", "start 20%"],
   });
 
-  const totalChars = intro.length;
-  const fontWeightControls = intro
-    .split("")
-    .map((_, index) =>
-      useTransform(
-        scrollYProgress,
-        [index / totalChars, (index + 1) / totalChars],
-        [200, 700],
-      ),
-    );
-
-  useEffect(() => {
-    const chars = textRef.current.childNodes;
-    const unsubscribesFontWeight = fontWeightControls.map((control, index) => {
-      return control.on("change", (v) => {
-        chars[index].style.fontWeight = v;
-      });
-    });
-
-    return () => {
-      unsubscribesFontWeight.forEach((unsubscribe) => unsubscribe());
-    };
-  }, [fontWeightControls]);
+  const characterOpacity = (chars) => {
+    return chars.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        style={{
+          opacity: useTransform(
+            scrollYProgress,
+            [index / chars.length, (index + 1) / chars.length],
+            [0, 1],
+          ),
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
 
   return (
     <section
@@ -64,19 +57,20 @@ function Services({ services, serviceText }) {
       </div>
       <div>
         <div className="mb-10 flex flex-col gap-20 md:flex-row md:gap-0 xl:my-40">
-          <div className="flex-1">
+          <div className="relative flex-1">
             <motion.h1
               ref={textRef}
-              initial={{ fontWeight: 100 }}
-              className="text-sm font-thin uppercase tracking-wide text-secondary-color opacity-85 md:text-2xl lg:text-2xl 2k:text-5xl"
+              className="w-[150px] text-sm font-bold uppercase tracking-wide text-secondary-color md:text-2xl lg:text-[3rem] 2k:text-5xl"
             >
-              {intro.split("").map((char, index) => (
-                <motion.span key={index}>{char}</motion.span>
-              ))}
+              {characterOpacity(intro)}
             </motion.h1>
+            <h1 className="absolute left-0 top-0 w-[150px] text-sm font-bold uppercase tracking-wide text-secondary-color opacity-10 md:text-2xl lg:text-[3rem] 2k:text-5xl">
+              {intro}
+            </h1>
           </div>
+
           <div className="flex-1">
-            <span className="ml-auto w-3/4 text-justify tracking-wider text-slate-800 2k:text-3xl">
+            <span className="ml-auto w-3/4 text-justify tracking-wider text-slate-800 lg:text-lg 2k:text-3xl">
               {width > 425 ? (
                 <FadeUp delay={700} phrase={description} />
               ) : (

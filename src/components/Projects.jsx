@@ -75,8 +75,9 @@ function Projects({ projects }) {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex 2k:right-32`}
-              style={{ top: `${i === 0 ? 60 : i * 190}vh` }}
+              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex 2k:right-32 ${
+                i === 0 ? "top-80" : i === 1 ? "top-[200vh]" : "top-[350vh]"
+              }`}
             >
               {/* Main Video */}
               {videoSources[project.title][0] ? (
@@ -93,7 +94,7 @@ function Projects({ projects }) {
                 <Image
                   src={project.images}
                   fill
-                  style={{ objectFit: "cover" }}
+                  className="object-cover"
                   alt="Description of the image"
                   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
