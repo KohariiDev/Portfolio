@@ -34,7 +34,7 @@ const Hero = React.memo(({ socials, hero }) => {
               x: 0,
               transition: {
                 type: "spring",
-                delay: 7,
+                delay: 5,
                 stiffness: 80,
                 damping: 2,
                 mass: 0.2,
@@ -75,7 +75,7 @@ const Hero = React.memo(({ socials, hero }) => {
         {width > 425 ? (
           <m.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 6, duration: 1 } }}
+            animate={{ opacity: 1, transition: { delay: 4.7, duration: 1 } }}
             className="mx-auto mt-24 md:mt-24 lg:mt-40 xl:mt-40 2k:mt-72"
           >
             <Rounded

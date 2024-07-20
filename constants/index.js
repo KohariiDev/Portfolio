@@ -1,24 +1,3 @@
-// Iphone images
-import iphoneHero from "../public/images/project-one/iphone-hero.webp";
-import iphone3D from "../public/images/project-one/iphone-3d.webp";
-import iphonePhone from "../public/images/project-one/iphone-phone.webp";
-// Iphone video
-import iphoneVideo from "../public/videos/iphone/page-video.mp4";
-
-// Arlen images
-import arlenHero from "../public/images/project-two/arlen-hero.webp";
-import arlenServices from "../public/images/project-two/arlen-services.webp";
-import arlenMobiles from "../public/images/project-two/arlen-mobiles.webp";
-// Arlen video
-import arlenVideo from "../public/videos/arlen/page-video.mp4";
-
-// Podcastr images
-import podcastrHero from "../public/images/project-three/podcastr.webp";
-import podcastrServices from "../public/images/project-three/podcastr-services.webp";
-import podcastrMobiles from "../public/images/project-three/podcastr-mobiles.webp";
-// Podcastr video
-import podcastrVideo from "../public/videos/podcastr/page-video.mp4";
-
 const iphone = {
   iphoneServices: "https://d34fm3rjhn7e1w.cloudfront.net/iphone/iphone-3d.webp",
   iphoneMobiles:
