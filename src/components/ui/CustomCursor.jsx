@@ -32,7 +32,7 @@ const CustomCursor = forwardRef((props, ref) => {
       className="fixed w-[110px] h-[110px] uppercase rounded-full bg-secondary-color text-xs tracking-widest text-slate-100 flex items-center justify-center pointer-events-none z-50"
       style={{ transform: "translate(-50%, -50%)", opacity: 0 }}
     >
-      View project
+      visit
     </div>
   );
 });
