@@ -15,8 +15,7 @@ const PageMobile = ({ project }) => {
         alt="Description of the image"
         width={1000}
         height={600}
-        style={{ objectFit: "cover" }}
-        className="mb-24"
+        className="mb-24 object-cover"
       />
 
       <h2 className="mb-24 text-xl leading-relaxed">
@@ -28,8 +27,7 @@ const PageMobile = ({ project }) => {
         alt="Description of second image"
         width={1000}
         height={600}
-        style={{ objectFit: "cover" }}
-        className="mb-24"
+        className="mb-24 object-cover"
       />
 
       <h2 className="mb-24 text-xl leading-relaxed">
@@ -41,8 +39,7 @@ const PageMobile = ({ project }) => {
         alt="Description of third image"
         width={1000}
         height={600}
-        style={{ objectFit: "cover" }}
-        className="mb-24"
+        className="mb-24 object-cover"
       />
 
       <h2 className="mb-24 text-xl leading-relaxed">

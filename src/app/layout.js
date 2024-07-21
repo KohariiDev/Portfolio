@@ -22,11 +22,11 @@ export const metadata = {
     site_name: "Arlen",
   },
   keywords: [
-    "3D modeling",
-    "construction",
-    "mechanical",
-    "architecture",
-    "quality",
+    "Portfolio",
+    "Web Development",
+    "Next.js",
+    "React",
+    "Framer Motion",
   ],
 };
 

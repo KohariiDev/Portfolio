@@ -75,7 +75,7 @@ function Projects({ projects }) {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`absolute right-14 z-40 hidden flex-col gap-20 lg:flex 2k:right-32 ${
+              className={`absolute right-14 z-40 hidden flex-col gap-7 lg:flex 2k:right-32 ${
                 i === 0 ? "top-80" : i === 1 ? "top-[200vh]" : "top-[350vh]"
               }`}
             >
@@ -83,14 +83,14 @@ function Projects({ projects }) {
               {videoSources[project.title][0] ? (
                 <VideoInView
                   src={videoSources[project.title][0]}
-                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80"
+                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-44 xl:w-80 2k:h-52 2k:w-96"
                 />
               ) : (
                 <Placeholder />
               )}
 
               {/* Image */}
-              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80">
+              <div className="relative bg-arlen lg:h-24 lg:w-44 xl:h-44 xl:w-80 2k:h-52 2k:w-96">
                 <Image
                   src={project.images}
                   fill
@@ -103,7 +103,7 @@ function Projects({ projects }) {
               {videoSources[project.title][1] ? (
                 <VideoInView
                   src={videoSources[project.title][1]}
-                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-32 xl:w-56 2k:h-52 2k:w-80"
+                  className="relative bg-arlen lg:h-24 lg:w-44 xl:h-44 xl:w-80 2k:h-52 2k:w-96"
                 />
               ) : (
                 <Placeholder />
