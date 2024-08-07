@@ -1,5 +1,4 @@
 "use client";
-import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideUp } from "./anim";
@@ -25,11 +24,17 @@ export default function Index() {
           variants={slideUp}
           initial="initial"
           exit="exit"
-          className={`${styles.introduction} text-6xl font-bold text-hero-color`}
+          className={`fixed z-[1000] flex h-screen w-screen items-center justify-center bg-[#0e0e0e] text-6xl font-bold text-hero-color`}
         >
           <>
-            <motion.p variants={opacity} initial="initial" animate="enter">
+            <motion.p
+              variants={opacity}
+              initial="initial"
+              animate="enter"
+              className="absolute z-10"
+            >
               <motion.span
+                className="mr-2.5 block h-3.5 w-3.5 rounded-full bg-[rgb(255,57,57)]"
                 initial={{ y: -300 }}
                 animate={{
                   y: 0,

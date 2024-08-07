@@ -76,8 +76,8 @@ module.exports = {
         17.5: "4.375rem", // 70px
       },
       screens: {
-        "2k": "2048px",
-        "xl2": { min: "1200px", max: "1430px" },
+        "2k": "2180px",
+        "xl2": { min: "1200px", max: "1465px" },
       },
     },
   },

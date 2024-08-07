@@ -26,7 +26,7 @@ const Hero = React.memo(({ socials, hero }) => {
         className="relative flex min-h-screen flex-col overflow-hidden bg-hero-color px-1 pt-36 text-slate-900 md:px-8 xl:px-20"
       >
         {/* title */}
-        <m.h1 className="xl2:text-11.5xl absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-wider md:top-20 md:text-nowrap md:text-left md:text-[7rem] md:tracking-tight lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl 2k:text-20xl">
+        <m.h1 className="absolute left-2/4 top-12 -translate-x-2/4 overflow-hidden text-center text-7xl font-semibold tracking-wider md:top-20 md:text-nowrap md:text-left md:text-[7rem] md:tracking-tight lg:top-20 lg:text-9.5xl xl:top-10 xl:text-14xl 2k:text-20xl xl2:text-11.5xl">
           <FadeUpTitle word={title} delay={2000} />
           <m.span
             initial={{ x: 100 }}
@@ -104,12 +104,12 @@ const Hero = React.memo(({ socials, hero }) => {
         )}
 
         {/* paragraph */}
-        <div className="mx-auto mb-20 mt-10 max-w-xl text-center md:mb-auto md:px-4 lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1300px]">
+        <div className="mx-auto mb-20 mt-10 max-w-xl text-center md:mb-auto md:px-4 lg:mb-[75px] lg:mt-[50px] xl:mb-auto 2k:max-w-[1500px]">
           {width > 425 ? (
             <FadeUp
               phrase={para}
               delay={3500}
-              paragraphClass="text-lg opacity-85 2k:text-7xl"
+              paragraphClass="text-lg opacity-85 2k:text-4xl 2k:tracking-widest"
               y={400}
             />
           ) : (

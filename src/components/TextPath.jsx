@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function TextPath({ textPath }) {
-  const { text1, text2 } = textPath;
+  const { text1 } = textPath;
   const container = useRef();
   const paths = useRef([]);
   const { scrollYProgress } = useScroll({
@@ -45,12 +45,12 @@ export default function TextPath({ textPath }) {
           ))}
         </text>
       </svg>
-      <Work scrollProgress={scrollYProgress} text2={text2} />
+      <Work scrollProgress={scrollYProgress} />
     </div>
   );
 }
 
-const Work = React.memo(({ scrollProgress, text2 }) => {
+const Work = React.memo(({ scrollProgress }) => {
   const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
   return (
     <div

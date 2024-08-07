@@ -60,11 +60,11 @@ function Services({ services, serviceText }) {
           <div className="relative flex-1">
             <motion.h1
               ref={textRef}
-              className="w-[150px] text-sm font-bold uppercase tracking-wide text-secondary-color md:text-2xl lg:text-[3rem] 2k:text-5xl"
+              className="w-[150px] 2k:w-[300px] text-sm font-bold uppercase tracking-wide text-secondary-color md:text-2xl lg:text-[3rem] 2k:text-7xl"
             >
               {characterOpacity(intro)}
             </motion.h1>
-            <h1 className="absolute left-0 top-0 w-[150px] text-sm font-bold uppercase tracking-wide text-secondary-color opacity-10 md:text-2xl lg:text-[3rem] 2k:text-5xl">
+            <h1 className="absolute left-0 top-0 w-[150px] 2k:w-[300px] text-sm font-bold uppercase tracking-wide text-secondary-color opacity-10 md:text-2xl lg:text-[3rem] 2k:text-7xl">
               {intro}
             </h1>
           </div>
